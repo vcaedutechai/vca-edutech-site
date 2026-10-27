@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="VCA seal">
+  <circle cx="100" cy="100" r="96" fill="#0F2350"/>
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#F5A623" stroke-width="5"/>
+  <circle cx="100" cy="100" r="66" fill="#16306A"/>
+  <polygon points="100,50 104.2,62.4 117.4,62.9 107,71 110.6,83.7 100,76.3 89.4,83.7 93,71 82.6,62.9 95.8,62.4" fill="#F5A623"/>
+  <path d="M97 148 C86 140 70 139 54 143 V108 C70 104 86 105 97 114 Z" fill="#FFFFFF"/>
+  <path d="M103 148 C114 140 130 139 146 143 V108 C130 104 114 105 103 114 Z" fill="#DCE6FF"/>
+  <path d="M100 113 V149" stroke="#F5A623" stroke-width="2.4"/>
+</svg>
