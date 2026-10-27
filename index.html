@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&amp;family=Public+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@500;600&amp;family=Noto+Sans+Devanagari:wght@500;600&amp;display=swap">
 <script type="application/ld+json"><!--seo-->
-{"@context":"https://schema.org","@type":"EducationalOrganization","name":"VCA EduTech and AI Private Limited","description":"School Integrated Program for NEET, IIT-JEE, Olympiads, Foundation and Pre-Foundation, AI automation and mentorship for schools, coaching institutes, colleges and businesses, and defence and government service exam guidance.","url":"https://vcakota.com/","email":"vcaedutechai@gmail.com","founder":{"@type":"Person","name":"Vijay K. Sharma","alternateName":"VS Sir"},"areaServed":"IN","telephone":"+919602405311","address":{"@type":"PostalAddress","addressLocality":"Jaipur","addressRegion":"Rajasthan","addressCountry":"IN"},"sameAs":["https://youtube.com/@vcakota","https://www.instagram.com/vs_sirphysics","https://www.linkedin.com/in/vs-sir-physics-2033321a0"]}
+{"@context":"https://schema.org","@type":"EducationalOrganization","name":"VCA EduTech and AI Private Limited","description":"School Integrated Program for NEET, IIT-JEE, Olympiads, Foundation and Pre-Foundation, AI automation and mentorship for schools, coaching institutes, colleges and businesses, and defence and government service exam guidance.","url":"https://vcakota.com/","email":"vcaedutechai@gmail.com","founder":{"@type":"Person","name":"Vijay K. Sharma","alternateName":"VS Sir"},"areaServed":"IN","telephone":"+919602405311","address":{"@type":"PostalAddress","addressLocality":"Jaipur","addressRegion":"Rajasthan","addressCountry":"IN"},"sameAs":["https://www.youtube.com/@vcakota","https://www.instagram.com/vs_sirphysics","https://www.linkedin.com/in/vs-sir-physics-2033321a0"]}
 </script><!--seo-->
 <style>
 /* Concept: a school seal turned into a working page. Navy and gold from the emblem carry every band;
@@ -209,6 +209,28 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
   .hero-cta .btn{width:100%}
   .nav .btn{display:none}
 }
+
+.shelf-title{margin:34px 0 16px;font:700 1.25rem/1.2 var(--font-display)}
+.shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
+.bk{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:8px;align-content:start}
+.bk .cover{aspect-ratio:3/4;border-radius:8px;background:linear-gradient(160deg,var(--navy),var(--navy-2));color:#fff;padding:14px;display:flex;flex-direction:column;justify-content:space-between;border-bottom:4px solid var(--gold)}
+.bk .cover i{font:600 .6875rem/1 var(--font-mono);letter-spacing:.12em;color:var(--gold);font-style:normal}
+.bk .cover b{font:700 1rem/1.25 var(--font-display)}
+.bk h4{margin:4px 0 0;font:700 1rem/1.3 var(--font-display)}
+.bk p{margin:0;font-size:.9rem;color:var(--muted)}
+.bk .soon{font:600 .75rem/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.bk-soon .cover{opacity:.72}
+.certs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.certs li{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:16px 18px;display:grid;gap:4px}
+.certs time{font:600 .75rem/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.certs b{font:700 1.0625rem/1.3 var(--font-display)}
+.certs span{color:var(--muted);font-size:.9375rem}
+.ranks{list-style:none;margin:0 0 18px;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px}
+.ranks li{align-content:start;background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:18px;display:grid;gap:4px}
+.ranks img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);margin-bottom:6px}
+.ranks b{font:800 2rem/1 var(--font-display)}
+.ranks span{font:600 .8125rem/1.3 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.ranks em{font-style:normal;font-weight:600}
 </style>
 </head>
 <body>
@@ -389,7 +411,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
           <li>AI for Educators <span>Teachers</span></li>
           <li>Workshops for teachers and institutes <span>Live</span></li>
         </ul>
-        <a class="more" href="https://youtube.com/@vcakota" target="_blank" rel="noopener">Watch on YouTube</a>
+        <a class="more" href="https://www.youtube.com/@vcakota" target="_blank" rel="noopener">Watch on YouTube</a>
       </div>
     </div>
   </div>
@@ -402,19 +424,22 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
       <h2>Books your students and teachers can start using today.</h2>
       <p class="lead">Written by the teacher behind the classroom results, in the same exam-focused style used in our school programs.</p>
     </div>
-    <div class="tracks">
-      <div class="track">
-        <h3>Physics for NEET and IIT-JEE</h3>
-        <p>30-day rapid revision books for Class 11 and 12 with formula boxes, diagrams and exam-pattern questions, plus Electrostatics for NEET and JEE and the RBSE Class 12 board guide.</p>
-        <a class="btn btn-gold" href="https://vcakota20-web.github.io/ai-mastery-with-vs-sir/books/" target="_blank" rel="noopener">Browse and buy books</a>
-      </div>
-      <div class="track">
-        <h3>AI and automation for educators</h3>
-        <p>The Automation Mastery 8-volume series and AI for Educators: practical guides for teachers, institutes and professionals who want to put AI to work.</p>
-        <a class="btn btn-gold" href="https://vcakota20-web.github.io/ai-mastery-with-vs-sir/books/" target="_blank" rel="noopener">See the book store</a>
-      </div>
+    <h3 class="shelf-title">Physics for NEET and IIT-JEE</h3>
+    <div class="shelf">
+        <article class="bk"><div class="cover" aria-hidden="true"><i>PHYSICS</i><b>NEET + JEE Physics, 30-Day Rapid Revision: Class 11</b></div><h4>NEET + JEE Physics, 30-Day Rapid Revision: Class 11</h4><p>Formula boxes, diagrams, exam-pattern MCQs</p><a class="more" href="https://www.amazon.in/dp/B0HLP31NF2" target="_blank" rel="noopener">Buy on Kindle</a><a class="more" href="https://vcakota20-web.github.io/ai-mastery-with-vs-sir/books/" target="_blank" rel="noopener">View and buy</a></article>
+        <article class="bk"><div class="cover" aria-hidden="true"><i>PHYSICS</i><b>NEET + JEE Physics, 30-Day Rapid Revision: Class 12</b></div><h4>NEET + JEE Physics, 30-Day Rapid Revision: Class 12</h4><p>Formula boxes, diagrams, exam-pattern MCQs</p><a class="more" href="https://vcakota20-web.github.io/ai-mastery-with-vs-sir/books/" target="_blank" rel="noopener">View and buy</a></article>
+        <article class="bk"><div class="cover" aria-hidden="true"><i>IIT-JEE</i><b>Electrostatics</b></div><h4>Electrostatics</h4><p>Concepts and solved questions for NEET and JEE</p><a class="more" href="https://vcakota20-web.github.io/ai-mastery-with-vs-sir/books/" target="_blank" rel="noopener">View and buy</a></article>
+        <article class="bk"><div class="cover" aria-hidden="true"><i>BOARDS</i><b>RBSE Class 12 Physics Board Guide</b></div><h4>RBSE Class 12 Physics Board Guide</h4><p>For board exam preparation</p><a class="more" href="https://vcakota20-web.github.io/ai-mastery-with-vs-sir/books/" target="_blank" rel="noopener">View and buy</a></article>
+        <article class="bk bk-soon"><div class="cover" aria-hidden="true"><i>IIT-JEE</i><b>JEE Advanced Electrostatics</b></div><h4>JEE Advanced Electrostatics</h4><p>Concepts, solved questions and ranker problems</p><span class="soon">Coming soon</span></article>
     </div>
-    <p class="form-note" style="margin-top:22px">Study material for your school is part of our <a href="#sip">School Integrated Program</a>.</p>
+    <h3 class="shelf-title">AI and automation</h3>
+    <div class="shelf">
+        <article class="bk"><div class="cover" aria-hidden="true"><i>AI</i><b>Automation Mastery</b></div><h4>Automation Mastery</h4><p>An 8-volume series: AI workflows, Python and n8n</p><a class="more" href="https://vcakota20-web.github.io/ai-mastery-with-vs-sir/books/" target="_blank" rel="noopener">View and buy</a></article>
+        <article class="bk"><div class="cover" aria-hidden="true"><i>AI</i><b>Practical Guide to AI for Educators</b></div><h4>Practical Guide to AI for Educators</h4><p>Prompting and AI tools for teachers and schools</p><a class="more" href="https://vcakota20-web.github.io/ai-mastery-with-vs-sir/books/" target="_blank" rel="noopener">View and buy</a></article>
+        <article class="bk"><div class="cover" aria-hidden="true"><i>AI</i><b>LEVEL UP AI</b></div><h4>LEVEL UP AI</h4><p>Practical AI skills for learners and professionals</p><a class="more" href="https://vcakota20-web.github.io/ai-mastery-with-vs-sir/books/" target="_blank" rel="noopener">View and buy</a></article>
+        <article class="bk bk-soon"><div class="cover" aria-hidden="true"><i>AUTOMATION</i><b>AI Automation for Schools</b></div><h4>AI Automation for Schools</h4><p>Running admissions, attendance, fees and reports with AI</p><span class="soon">Coming soon</span></article>
+    </div>
+    <p class="form-note" style="margin-top:22px"><a class="more" href="https://vcakota20-web.github.io/ai-mastery-with-vs-sir/books/" target="_blank" rel="noopener">Open the full book store</a> · Study material for your school is part of our <a href="#sip">School Integrated Program</a>.</p>
   </div>
 </section>
 
@@ -441,6 +466,41 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
   </div>
 </section>
 
+<section class="section" id="credentials">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">AI training and certifications</p>
+      <h2>A teacher who keeps learning, so your school gets AI that works.</h2>
+      <p class="lead">Our founder trains in AI strategy, prompt engineering and Python, and uses it to build automation for schools, coaching institutes and businesses.</p>
+    </div>
+    <ul class="certs">
+      <li><time>Jul 2026</time><b>Executive Program in Digital Transformation &amp; AI for Leaders</b><span>Electronics &amp; ICT Academy, IIT Guwahati</span></li>
+      <li><time>Sep 2026</time><b>Prompt Engineering for ChatGPT</b><span>Vanderbilt University</span></li>
+      <li><time>Sep 2026</time><b>Programming for Everybody (Getting Started with Python)</b><span>University of Michigan</span></li>
+      <li><time>Sep 2026</time><b>AI for Content Creation</b><span>Google</span></li>
+      <li><time>Sep 2026</time><b>AI for Brainstorming and Planning</b><span>Coursera</span></li>
+      <li><time>Sep 2026</time><b>Google AI Fundamentals</b><span>Coursera</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section alt" id="results">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Top rank milestones</p>
+      <h2>Results from our founder's physics teaching journey.</h2>
+    </div>
+    <ul class="ranks">
+      <li><img src="air1-aiims-2017.jpg" width="240" height="240" alt="Nishita Purohit, AIR 1 AIIMS 2017" loading="lazy"><b>AIR 1</b><span>AIIMS 2017</span><em>Nishita Purohit</em></li>
+      <li><img src="air5-neet-2018.jpg" width="240" height="240" alt="Prince Choudhary, AIR 5 NEET 2018" loading="lazy"><b>AIR 5</b><span>NEET 2018</span><em>Prince Choudhary</em></li>
+      <li><img src="air1-neet-2020.jpg" width="240" height="240" alt="Shoaib Aftab, AIR 1 NEET 2020" loading="lazy"><b>AIR 1</b><span>NEET 2020</span><em>Shoaib Aftab, 720/720</em></li>
+      <li><b>AIR 24</b><span>NEET 2023</span><em>Samuel H. Tsapa</em></li>
+      <li><b>AIR 28</b><span>NEET 2024</span><em>Arindam Chowdhury, 715/720</em></li>
+    </ul>
+    <p class="proof-note">Achieved while our founder was Academic Director and Senior Physics Faculty at earlier institutes. These are his career results and are not claims about VCA EduTech and AI Pvt. Ltd. programmes.</p>
+  </div>
+</section>
+
 <section class="section" id="founder">
   <div class="wrap founder">
     <figure class="photo"><img src="vs-sir.jpg" width="760" height="950" alt="Vijay K. Sharma, known as VS Sir, with arms crossed" loading="lazy"><figcaption>VS Sir · Founder and Director</figcaption></figure>
@@ -463,7 +523,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
         <span class="chip">IIM Kozhikode eMDP</span>
       </div>
       <div class="social">
-        <a href="https://youtube.com/@vcakota" target="_blank" rel="noopener">YouTube @vcakota</a>
+        <a href="https://www.youtube.com/@vcakota" target="_blank" rel="noopener">YouTube @vcakota</a>
         <a href="https://www.instagram.com/vs_sirphysics" target="_blank" rel="noopener">Instagram @vs_sirphysics</a>
         <a href="https://www.linkedin.com/in/vs-sir-physics-2033321a0" target="_blank" rel="noopener">LinkedIn</a>
       </div>
@@ -481,7 +541,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
       <ul class="contact-list">
         <li><b>WhatsApp and phone</b><span>+91 96024 05311</span></li>
         <li><b>Email</b><span><a href="mailto:vcaedutechai@gmail.com">vcaedutechai@gmail.com</a></span></li>
-        <li><b>Follow VS Sir</b><span><a href="https://youtube.com/@vcakota" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/vs_sirphysics" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.linkedin.com/in/vs-sir-physics-2033321a0" target="_blank" rel="noopener">LinkedIn</a></span></li>
+        <li><b>Follow VS Sir</b><span><a href="https://www.youtube.com/@vcakota" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/vs_sirphysics" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.linkedin.com/in/vs-sir-physics-2033321a0" target="_blank" rel="noopener">LinkedIn</a></span></li>
         <li><b>Based in</b><span>Jaipur, Rajasthan. Serving schools across India.</span></li>
       </ul>
     </div>
@@ -517,7 +577,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
       </div>
       <nav class="foot-links" aria-label="Footer">
         <a href="#sip">School Program</a><a href="#automation">Automation</a><a href="#learn">NEET &amp; JEE</a><a href="#books">Books</a><a href="#defence">Defence &amp; Govt</a><a href="#founder">Founder</a><a href="#contact">Contact</a>
-        <a href="https://youtube.com/@vcakota" target="_blank" rel="noopener">YouTube</a><a href="https://www.instagram.com/vs_sirphysics" target="_blank" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/vs-sir-physics-2033321a0" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.youtube.com/@vcakota" target="_blank" rel="noopener">YouTube</a><a href="https://www.instagram.com/vs_sirphysics" target="_blank" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/vs-sir-physics-2033321a0" target="_blank" rel="noopener">LinkedIn</a>
       </nav>
     </div>
     <div class="legal">
