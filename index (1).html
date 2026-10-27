@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><!--seo-->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><!--seo-->
+<title>VCA EduTech and AI</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="VCA EduTech and AI Private Limited runs a School Integrated Program for NEET, IIT-JEE, Olympiads, Foundation and Pre-Foundation, AI automation for schools, coaching institutes, colleges and businesses, AI mentorship, and defence and government service exam guidance across India."><!--seo-->
+<link rel="canonical" href="https://vcakota.com/"><!--seo-->
+<meta property="og:url" content="https://vcakota.com/"><!--seo-->
+<meta property="og:title" content="VCA EduTech and AI Private Limited"><!--seo-->
+<meta property="og:description" content="School Integrated Program for NEET, IIT-JEE, Olympiads and Foundation, AI automation and mentorship, and defence exam guidance. Led by VS Sir."><!--seo-->
+<meta property="og:type" content="website"><!--seo-->
+<link rel="icon" href="favicon.svg" type="image/svg+xml"><!--seo-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&amp;family=Public+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@500;600&amp;family=Noto+Sans+Devanagari:wght@500;600&amp;display=swap">
+<script type="application/ld+json"><!--seo-->
+{"@context":"https://schema.org","@type":"EducationalOrganization","name":"VCA EduTech and AI Private Limited","description":"School Integrated Program for NEET, IIT-JEE, Olympiads, Foundation and Pre-Foundation, AI automation and mentorship for schools, coaching institutes, colleges and businesses, and defence and government service exam guidance.","url":"https://vcakota.com/","email":"vcaedutechai@gmail.com","founder":{"@type":"Person","name":"Vijay K. Sharma","alternateName":"VS Sir"},"areaServed":"IN","telephone":"+919602405311","address":{"@type":"PostalAddress","addressLocality":"Jaipur","addressRegion":"Rajasthan","addressCountry":"IN"},"sameAs":["https://youtube.com/@vcakota","https://www.instagram.com/vs_sirphysics","https://www.linkedin.com/in/vs-sir-physics-2033321a0"]}
+</script><!--seo-->
+<style>
+/* Concept: a school seal turned into a working page. Navy and gold from the emblem carry every band;
+   the hero and defence sections stay navy in both themes, the rest follows the viewer's theme. */
+:root{
+  --bg:#F5F7FC; --surface:#FFFFFF; --surface-2:#E9EEF9; --ink:#12203F; --muted:#48577A; --line:#D5DDEE;
+  --link:#1B3FBF; --navy:#0B1B3A; --navy-2:#13284F; --navy-line:#2A4070; --gold:#F5A623;
+  --hero-ink:#FFFFFF; --hero-muted:#BFCBE6;
+  --font-display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --font-body:'Public Sans','Segoe UI',system-ui,sans-serif;
+  --font-mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  --font-hi:'Noto Sans Devanagari','Nirmala UI','Mangal',sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#08112A; --surface:#0E1B3B; --surface-2:#13244A; --ink:#E8EEFB; --muted:#A6B4D4; --line:#223460; --link:#9DB8FF;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#08112A; --surface:#0E1B3B; --surface-2:#13244A; --ink:#E8EEFB; --muted:#A6B4D4; --line:#223460; --link:#9DB8FF;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:1.0625rem;line-height:1.6;-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+img,svg{max-width:100%}
+a{color:var(--link)}
+h1,h2,h3{font-family:var(--font-display);margin:0;text-wrap:balance;line-height:1.1;color:inherit}
+h1{font-size:clamp(2.4rem,5.4vw,4.2rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:clamp(1.85rem,3.6vw,2.75rem);font-weight:800;letter-spacing:-.015em}
+h3{font-size:1.25rem;font-weight:600}
+p{margin:0}
+:focus-visible{outline:3px solid var(--link);outline-offset:3px}
+.on-navy :focus-visible,.hero :focus-visible,.site-foot :focus-visible{outline-color:var(--gold)}
+.wrap{max-width:1160px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font:600 .75rem/1.2 var(--font-mono);letter-spacing:.11em;text-transform:uppercase;color:var(--link)}
+.on-navy .eyebrow,.hero .eyebrow{color:var(--gold)}
+.lead{font-size:1.1875rem;color:var(--muted);max-width:62ch}
+.on-navy .lead,.hero .lead{color:var(--hero-muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:10px;font:700 1rem/1 var(--font-body);text-decoration:none;cursor:pointer;border:0;transition:transform .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-gold:hover{color:var(--navy)}
+.btn-line{border:1.5px solid #5A6C96;color:#fff;background:transparent}
+.btn-line:hover{color:#fff;border-color:var(--gold)}
+.section{padding-block:clamp(56px,8vw,96px)}
+.alt{background:var(--surface-2)}
+.on-navy{background:var(--navy);color:var(--hero-ink)}
+.on-navy a{color:#fff}
+
+/* header */
+.site-head{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.head-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 28px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.brand svg{width:46px;height:46px;flex:none}
+.brand b{display:block;font:800 1.25rem/1 var(--font-display);letter-spacing:.01em}
+.brand small{display:block;font:600 .6875rem/1.2 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.nav{display:flex;align-items:center;gap:6px 22px;font-size:.9375rem;font-weight:600;overflow-x:auto;max-width:100%}
+.nav a{color:var(--ink);text-decoration:none;white-space:nowrap;padding:8px 0}
+.nav a:hover{color:var(--link)}
+.nav .btn{min-height:42px;padding:0 18px;font-size:.9375rem;color:var(--navy)}
+
+/* hero */
+.hero{background:var(--navy);color:var(--hero-ink)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:48px;align-items:center;padding-block:clamp(48px,7vw,88px)}
+.hero h1{margin:16px 0 22px}
+.hero .lead{margin-bottom:32px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px}
+.seal-wrap{display:flex;flex-direction:column;align-items:center;gap:18px;min-width:0}
+.seal-wrap svg{width:min(100%,380px);height:auto;filter:drop-shadow(0 18px 40px rgba(0,0,0,.35))}
+.motto{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+.motto span:first-child{font:600 .8125rem/1.2 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--hero-muted)}
+.motto span:last-child{font:600 1.0625rem/1.3 var(--font-hi);color:var(--gold)}
+
+/* proof */
+.proof{background:var(--surface);border-bottom:1px solid var(--line)}
+.proof-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+.proof-item{padding:26px 22px;border-left:1px solid var(--line);min-width:0}
+.proof-item:first-child{border-left:0;padding-left:0}
+.proof-item b{display:block;font:800 clamp(1.7rem,3vw,2.3rem)/1 var(--font-display);color:var(--ink);font-variant-numeric:tabular-nums}
+.proof-item span{display:block;margin-top:8px;font-size:.9375rem;color:var(--muted)}
+.proof-note{padding-block:0 18px;font-size:.8125rem;color:var(--muted)}
+
+/* sections */
+.sec-head{display:grid;gap:14px;margin-bottom:44px;max-width:760px}
+.cols-2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:start}
+.gets{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:8px 28px}
+.gets div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:6px 20px;padding:18px 0;border-top:1px solid var(--line)}
+.gets div:first-child{border-top:0}
+.gets dt{font:600 .8125rem/1.5 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--link)}
+.gets dd{margin:0;color:var(--ink)}
+.ladder{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--surface)}
+.ladder li{padding:22px 24px;border-left:1px solid var(--line);display:grid;gap:4px;align-content:start}
+.ladder li:first-child{border-left:0}
+.ladder b{font:800 1.25rem/1.2 var(--font-display)}
+.ladder span{color:var(--muted);font-size:.9375rem}
+.ladder-note{margin:12px 0 44px;font:600 .8125rem/1.4 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.steps{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:18px;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px;align-items:start}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--gold);font:700 1.1rem/1 var(--font-display)}
+.steps b{display:block;font-family:var(--font-display);font-size:1.125rem}
+.steps span{color:var(--muted)}
+.fit{margin-top:32px;padding-top:22px;border-top:1px solid var(--line)}
+.fit h3{margin-bottom:10px}
+.ticks{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.ticks li{padding-left:26px;position:relative}
+.ticks li::before{content:"";position:absolute;left:0;top:.55em;width:14px;height:8px;border-left:3px solid var(--gold);border-bottom:3px solid var(--gold);transform:rotate(-45deg) translateY(-3px)}
+
+.flow{list-style:none;margin:0 0 40px;padding:0;display:flex;flex-wrap:wrap;gap:12px 8px;align-items:center}
+.flow li{display:flex;align-items:center;gap:8px}
+.flow li span{display:inline-block;padding:10px 16px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font:600 .8125rem/1.2 var(--font-mono);letter-spacing:.04em;text-transform:uppercase}
+.flow li:not(:last-child)::after{content:"";width:22px;height:2px;background:var(--gold);flex:none}
+.auto-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px 40px}
+.auto-grid h3{padding-top:14px;border-top:3px solid var(--gold);margin-bottom:8px}
+.auto-grid p{color:var(--muted);font-size:1rem}
+.stack{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px;align-items:center}
+.stack b{font:600 .75rem/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+.chip{padding:7px 12px;border-radius:8px;background:var(--surface);border:1px solid var(--line);font:600 .8125rem/1 var(--font-mono)}
+
+.tracks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,5vw,64px)}
+.track{border-top:4px solid var(--navy);padding-top:22px;display:grid;gap:14px;align-content:start}
+.track h3{font-size:1.6rem;font-weight:800}
+.books{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:0}
+.books li{display:flex;flex-wrap:wrap;gap:4px 14px;justify-content:space-between;padding:12px 0;border-top:1px solid var(--line)}
+.books li:last-child{border-bottom:1px solid var(--line)}
+.books span{font:600 .75rem/1.6 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.more{font-weight:700}
+
+.def-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:8px}
+.def-card{background:var(--navy-2);border:1px solid var(--navy-line);border-radius:16px;padding:28px;display:grid;gap:10px;align-content:start}
+.def-card .eyebrow{color:var(--gold)}
+.def-card p{color:var(--hero-muted)}
+.def-cover{margin-top:32px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 40px}
+.def-cover li{color:var(--hero-ink)}
+.def-note{margin-top:28px;font-size:.9375rem;color:var(--hero-muted);max-width:70ch}
+
+.founder{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(28px,5vw,64px);align-items:start}
+.photo{margin:0;width:100%;max-width:340px}
+.photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border-radius:16px;background:var(--navy)}
+.photo figcaption{margin-top:10px;font:600 .75rem/1.4 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.founder h2{margin:12px 0 6px}
+.role{font:600 .9375rem/1.4 var(--font-mono);letter-spacing:.04em;color:var(--link);margin-bottom:18px}
+.timeline{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:0;border-top:1px solid var(--line)}
+.timeline li{display:grid;grid-template-columns:116px minmax(0,1fr);gap:4px 18px;padding:12px 0;border-bottom:1px solid var(--line)}
+.timeline time{font:600 .8125rem/1.7 var(--font-mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.social{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:22px;font-weight:600}
+.founder-note{margin-top:22px;font-size:.875rem;color:var(--muted)}
+
+.contact-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,64px);align-items:start}
+.contact-list{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:14px}
+.contact-list b{display:block;font:600 .75rem/1.2 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.contact-list span{font-size:1.125rem;user-select:all}
+form{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:clamp(20px,3vw,32px);display:grid;gap:16px}
+.field{display:grid;gap:6px;min-width:0}
+label{font-weight:600;font-size:.9375rem}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;min-height:48px;width:100%}
+textarea{min-height:96px;resize:vertical}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--link);outline-offset:1px}
+.form-note{font-size:.875rem;color:var(--muted)}
+
+.site-foot{background:var(--navy);color:var(--hero-muted);padding-block:44px 32px;font-size:.9375rem}
+.foot-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:32px;align-items:start}
+.foot-brand{display:flex;align-items:center;gap:14px;color:#fff}
+.foot-brand svg{width:56px;height:56px;flex:none}
+.foot-brand b{display:block;font:800 1.2rem/1.1 var(--font-display)}
+.foot-links{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:flex-end}
+.site-foot a{color:#fff}
+.legal{margin-top:28px;padding-top:20px;border-top:1px solid var(--navy-line);font-size:.8125rem;display:grid;gap:6px}
+
+@media (max-width:900px){
+  .hero-grid,.cols-2,.tracks,.def-grid,.founder,.contact-grid,.foot-grid{grid-template-columns:minmax(0,1fr)}
+  .auto-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ladder{grid-template-columns:minmax(0,1fr)}
+  .ladder li{border-left:0;border-top:1px solid var(--line)}
+  .ladder li:first-child{border-top:0}
+  .proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .proof-item:nth-child(3){border-left:0;padding-left:0}
+  .proof-item:nth-child(n+3){border-top:1px solid var(--line)}
+  .foot-links{justify-content:flex-start}
+  .seal-wrap svg{width:min(100%,320px)}
+}
+@media (max-width:560px){
+  .auto-grid,.def-cover{grid-template-columns:minmax(0,1fr)}
+  .gets div{grid-template-columns:minmax(0,1fr)}
+  .timeline li{grid-template-columns:minmax(0,1fr)}
+  .hero-cta .btn{width:100%}
+  .nav .btn{display:none}
+}
+
+.shelf-title{margin:34px 0 16px;font:700 1.25rem/1.2 var(--font-display)}
+.shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
+.bk{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:8px;align-content:start}
+.bk .cover{aspect-ratio:3/4;border-radius:8px;background:linear-gradient(160deg,var(--navy),var(--navy-2));color:#fff;padding:14px;display:flex;flex-direction:column;justify-content:space-between;border-bottom:4px solid var(--gold)}
+.bk .cover i{font:600 .6875rem/1 var(--font-mono);letter-spacing:.12em;color:var(--gold);font-style:normal}
+.bk .cover b{font:700 1rem/1.25 var(--font-display)}
+.bk h4{margin:4px 0 0;font:700 1rem/1.3 var(--font-display)}
+.bk p{margin:0;font-size:.9rem;color:var(--muted)}
+.bk .soon{font:600 .75rem/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.bk-soon .cover{opacity:.72}
+.certs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.certs li{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:16px 18px;display:grid;gap:4px}
+.certs time{font:600 .75rem/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.certs b{font:700 1.0625rem/1.3 var(--font-display)}
+.certs span{color:var(--muted);font-size:.9375rem}
+.ranks{list-style:none;margin:0 0 18px;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px}
+.ranks li{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:18px;display:grid;gap:4px}
+.ranks b{font:800 2rem/1 var(--font-display)}
+.ranks span{font:600 .8125rem/1.3 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.ranks em{font-style:normal;font-weight:600}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="mark" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="96" fill="#0F2350"/>
+      <circle cx="100" cy="100" r="93" fill="none" stroke="#F5A623" stroke-width="1.6"/>
+      <circle cx="100" cy="100" r="86" fill="none" stroke="#F5A623" stroke-width=".8" opacity=".7"/>
+      <circle cx="100" cy="100" r="67" fill="none" stroke="#F5A623" stroke-width=".8" opacity=".7"/>
+      <circle cx="100" cy="100" r="62" fill="#16306A"/>
+      <polygon points="100,57 103.17,65.63 112.36,65.98 105.14,71.67 107.64,80.52 100,75.4 92.36,80.52 94.86,71.67 87.64,65.98 96.83,65.63" fill="#F5A623"/>
+      <g stroke="#F5A623" stroke-width="1.1" fill="none" stroke-linecap="round">
+        <path d="M100 84 L88 98 M100 84 L100 102 M100 84 L112 98"/>
+      </g>
+      <g fill="#F5A623"><circle cx="88" cy="98" r="2.2"/><circle cx="100" cy="102" r="2.2"/><circle cx="112" cy="98" r="2.2"/></g>
+      <path d="M97 138 C87 131 72 130 58 134 V104 C72 100 87 101 97 109 Z" fill="#FFFFFF"/>
+      <path d="M103 138 C113 131 128 130 142 134 V104 C128 100 113 101 103 109 Z" fill="#DCE6FF"/>
+      <path d="M100 108 V139" stroke="#F5A623" stroke-width="1.4"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="#top" aria-label="VCA EduTech and AI, home">
+      <svg viewBox="0 0 200 200" role="img" aria-label="VCA seal"><use href="#mark"/></svg>
+      <span><b>VCA EduTech &amp; AI</b><small>Private Limited</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#sip">School Program</a>
+      <a href="#automation">Automation</a>
+      <a href="#learn">NEET &amp; JEE</a>
+      <a href="#books">Books</a>
+      <a href="#defence">Defence &amp; Govt</a>
+      <a href="#founder">Founder</a>
+      <a class="btn btn-gold" href="#contact">Free assessment</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero on-navy">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">School Integrated Program · AI Automation · AI Mentorship · Defence Guidance</p>
+      <h1>Coaching-grade learning for every school in India.</h1>
+      <p class="lead">VCA EduTech and AI sets up NEET, IIT-JEE, Olympiad and foundation programmes inside your school, brings AI automation to schools, coaching institutes, colleges and businesses, and guides students toward defence and government careers. Led by VS Sir, an ex-Navy Naval Artificer who has mentored AIR 1 rankers.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="https://wa.me/919602405311?text=Hello%2C%20I%20would%20like%20a%20free%20assessment%20for%20my%20school." target="_blank" rel="noopener">Book a free school assessment</a>
+        <a class="btn btn-line" href="#sip">See the School Integrated Program</a>
+      </div>
+    </div>
+    <div class="seal-wrap">
+      <svg viewBox="0 0 200 200" role="img" aria-label="VCA EduTech and AI Private Limited seal: a star above an open book">
+        <use href="#mark"/>
+        <defs>
+          <path id="ringTop" d="M27 100 A73 73 0 0 1 173 100"/>
+          <path id="ringBot" d="M19 100 A81 81 0 0 0 181 100"/>
+        </defs>
+        <text font-family="'Public Sans',sans-serif" font-weight="700" font-size="13" letter-spacing="2.2" fill="#FFFFFF" text-anchor="middle"><textPath href="#ringTop" startOffset="50%">VCA EDUTECH &amp; AI</textPath></text>
+        <text font-family="'Public Sans',sans-serif" font-weight="700" font-size="10.5" letter-spacing="3.2" fill="#FFFFFF" text-anchor="middle"><textPath href="#ringBot" startOffset="50%">PRIVATE LIMITED</textPath></text>
+        <circle cx="22" cy="100" r="2.6" fill="#F5A623"/><circle cx="178" cy="100" r="2.6" fill="#F5A623"/>
+      </svg>
+      <p class="motto"><span>Education · Discipline · AI</span><span lang="hi">शिक्षा · अनुशासन · AI</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="proof" aria-label="Founder track record">
+  <div class="wrap">
+    <div class="proof-grid">
+      <div class="proof-item"><b>200,000+</b><span>students taught together in one live online batch*</span></div>
+      <div class="proof-item"><b>AIR 1</b><span>NEET 2020 and AIIMS 2017, plus AIR 5 in NEET 2018, mentored*</span></div>
+      <div class="proof-item"><b>20+ years</b><span>of professional experience, from the Indian Navy to academic leadership</span></div>
+      <div class="proof-item"><b>8 volumes</b><span>in the Automation Mastery book series</span></div>
+    </div>
+    <p class="proof-note">*Achieved by our founder while teaching at earlier institutes. These are his career results and are not claims about VCA EduTech and AI Pvt. Ltd. programmes.</p>
+  </div>
+</section>
+
+<section class="section" id="sip">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">School Integrated Program (SIP)</p>
+      <h2>Turn your school into a NEET, IIT-JEE and Olympiad launchpad.</h2>
+      <p class="lead">In towns without a coaching institute, the strongest students often have to leave for another city. SIP brings the whole programme into your own school instead. You pay a programme fee or consulting charge that we agree after a free assessment.</p>
+    </div>
+    <ol class="ladder" aria-label="Programme levels">
+      <li><b>Pre-Foundation</b><span>Early concepts, curiosity and study habits.</span></li>
+      <li><b>Foundation</b><span>Core Maths and Science, built for the road to JEE and NEET.</span></li>
+      <li><b>NEET and IIT-JEE</b><span>Full exam preparation with tests and analysis.</span></li>
+    </ol>
+    <p class="ladder-note">Olympiad training runs alongside every level.</p>
+    <div class="cols-2">
+      <div>
+        <h3>How a school starts</h3>
+        <ol class="steps">
+          <li><div><b>Free assessment</b><span>A visit or video call to understand your classes, students, staff and timetable.</span></div></li>
+          <li><div><b>Programme design</b><span>We plan batches, faculty, study material and a clear fee proposal.</span></div></li>
+          <li><div><b>Launch and training</b><span>Classes begin, and your own teachers are trained alongside our faculty.</span></div></li>
+          <li><div><b>Monthly review</b><span>Test results, attendance and progress are reviewed with the principal every month.</span></div></li>
+        </ol>
+        <div class="fit">
+          <h3>Who SIP is for</h3>
+          <ul class="ticks">
+            <li>Schools with no coaching setup of their own</li>
+            <li>CBSE and state-board schools that want to keep top students</li>
+            <li>Management teams that want measurable academic results</li>
+          </ul>
+        </div>
+      </div>
+      <dl class="gets">
+        <div><dt>Faculty</dt><dd>Subject faculty for NEET and IIT-JEE, placed or trained, with a term-wise teaching plan.</dd></div>
+        <div><dt>Study material</dt><dd>Books, chapter-wise practice sheets and revision notes written for NEET, JEE and Olympiads.</dd></div>
+        <div><dt>Tests</dt><dd>Regular tests in the NEET and JEE pattern with student-wise analysis reports.</dd></div>
+        <div><dt>Timetable</dt><dd>Coaching periods built into the school day for the classes you choose.</dd></div>
+        <div><dt>Teacher training</dt><dd>Your teachers learn the method, so quality stays in the school.</dd></div>
+        <div><dt>Parent reports</dt><dd>Attendance, marks and progress reach parents automatically on WhatsApp.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="automation">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">AI Automation</p>
+      <h2>Run your institute without the paperwork.</h2>
+      <p class="lead">For schools, coaching institutes, colleges and businesses. We design, build and hand over workflows that take repeat work off your staff, then train your team to run them.</p>
+    </div>
+    <ol class="flow" aria-label="Example admissions workflow">
+      <li><span>Enquiry</span></li>
+      <li><span>Instant reply</span></li>
+      <li><span>Counselling slot</span></li>
+      <li><span>Reminder</span></li>
+      <li><span>Admission</span></li>
+      <li><span>Fee reminders</span></li>
+    </ol>
+    <div class="auto-grid">
+      <div><h3>Admissions and enquiries</h3><p>Every enquiry gets a reply, a counselling slot and follow-ups, with no staff time spent chasing.</p></div>
+      <div><h3>Attendance and parent updates</h3><p>Daily attendance reaches parents on WhatsApp the same day, and absences are flagged.</p></div>
+      <div><h3>Results and reports</h3><p>Marks are entered once. Report cards, rank lists and topic-wise analysis build themselves.</p></div>
+      <div><h3>Fees and reminders</h3><p>Due dates, reminders and receipts run automatically, and pending dues show on one screen.</p></div>
+      <div><h3>Owner dashboard</h3><p>Admissions, attendance, fees and results for every branch in one live view for management.</p></div>
+      <div><h3>AI assistant</h3><p>An assistant answers common parent and student questions at any hour, in English and Hindi.</p></div>
+    </div>
+    <div class="stack">
+      <b>Built with</b>
+      <span class="chip">n8n</span><span class="chip">Python</span><span class="chip">WhatsApp Business API</span><span class="chip">Google Workspace</span><span class="chip">AI agents</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="learn">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Coaching and mentorship</p>
+      <h2>Learn from a teacher who has mentored AIR 1 rankers.</h2>
+    </div>
+    <div class="tracks">
+      <div class="track">
+        <h3>NEET, IIT-JEE and Olympiads</h3>
+        <p>Concept-first teaching from pre-foundation to the final revision, led by VS Sir and his team, with books and tests built to the exam pattern.</p>
+        <ul class="books">
+          <li>NEET + JEE Physics, 30-Day Rapid Revision <span>Class 11 and 12</span></li>
+          <li>Electrostatics <span>NEET and JEE</span></li>
+          <li>RBSE Class 12 Physics Board Guide <span>Board exams</span></li>
+        </ul>
+        <a class="more" href="https://vcakota20-web.github.io/ai-mastery-with-vs-sir/books/" target="_blank" rel="noopener">See all books</a>
+      </div>
+      <div class="track">
+        <h3>AI learning and mentorship</h3>
+        <p>Practical AI for teachers, students and working professionals: prompting, Python, n8n workflows and AI agents, with live workshops and one-to-one mentoring.</p>
+        <ul class="books">
+          <li>Automation Mastery <span>8-volume series</span></li>
+          <li>AI for Educators <span>Teachers</span></li>
+          <li>Workshops for teachers and institutes <span>Live</span></li>
+        </ul>
+        <a class="more" href="https://youtube.com/@vcakota" target="_blank" rel="noopener">Watch on YouTube</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="books">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Books by VS Sir</p>
+      <h2>Books your students and teachers can start using today.</h2>
+      <p class="lead">Written by the teacher behind the classroom results, in the same exam-focused style used in our school programs.</p>
+    </div>
+    <h3 class="shelf-title">Physics for NEET and IIT-JEE</h3>
+    <div class="shelf">
+        <article class="bk"><div class="cover" aria-hidden="true"><i>PHYSICS</i><b>NEET + JEE Physics, 30-Day Rapid Revision: Class 11</b></div><h4>NEET + JEE Physics, 30-Day Rapid Revision: Class 11</h4><p>Formula boxes, diagrams, exam-pattern MCQs</p><a class="more" href="https://vcakota20-web.github.io/ai-mastery-with-vs-sir/books/" target="_blank" rel="noopener">View and buy</a></article>
+        <article class="bk"><div class="cover" aria-hidden="true"><i>PHYSICS</i><b>NEET + JEE Physics, 30-Day Rapid Revision: Class 12</b></div><h4>NEET + JEE Physics, 30-Day Rapid Revision: Class 12</h4><p>Formula boxes, diagrams, exam-pattern MCQs</p><a class="more" href="https://vcakota20-web.github.io/ai-mastery-with-vs-sir/books/" target="_blank" rel="noopener">View and buy</a></article>
+        <article class="bk"><div class="cover" aria-hidden="true"><i>IIT-JEE</i><b>Electrostatics</b></div><h4>Electrostatics</h4><p>Concepts and solved questions for NEET and JEE</p><a class="more" href="https://vcakota20-web.github.io/ai-mastery-with-vs-sir/books/" target="_blank" rel="noopener">View and buy</a></article>
+        <article class="bk"><div class="cover" aria-hidden="true"><i>BOARDS</i><b>RBSE Class 12 Physics Board Guide</b></div><h4>RBSE Class 12 Physics Board Guide</h4><p>For board exam preparation</p><a class="more" href="https://vcakota20-web.github.io/ai-mastery-with-vs-sir/books/" target="_blank" rel="noopener">View and buy</a></article>
+        <article class="bk bk-soon"><div class="cover" aria-hidden="true"><i>IIT-JEE</i><b>JEE Advanced Electrostatics</b></div><h4>JEE Advanced Electrostatics</h4><p>Concepts, solved questions and ranker problems</p><span class="soon">Coming soon</span></article>
+    </div>
+    <h3 class="shelf-title">AI and automation</h3>
+    <div class="shelf">
+        <article class="bk"><div class="cover" aria-hidden="true"><i>AI</i><b>Automation Mastery</b></div><h4>Automation Mastery</h4><p>An 8-volume series: AI workflows, Python and n8n</p><a class="more" href="https://vcakota20-web.github.io/ai-mastery-with-vs-sir/books/" target="_blank" rel="noopener">View and buy</a></article>
+        <article class="bk"><div class="cover" aria-hidden="true"><i>AI</i><b>Practical Guide to AI for Educators</b></div><h4>Practical Guide to AI for Educators</h4><p>Prompting and AI tools for teachers and schools</p><a class="more" href="https://vcakota20-web.github.io/ai-mastery-with-vs-sir/books/" target="_blank" rel="noopener">View and buy</a></article>
+        <article class="bk"><div class="cover" aria-hidden="true"><i>AI</i><b>LEVEL UP AI</b></div><h4>LEVEL UP AI</h4><p>Practical AI skills for learners and professionals</p><a class="more" href="https://vcakota20-web.github.io/ai-mastery-with-vs-sir/books/" target="_blank" rel="noopener">View and buy</a></article>
+        <article class="bk bk-soon"><div class="cover" aria-hidden="true"><i>AUTOMATION</i><b>AI Automation for Schools</b></div><h4>AI Automation for Schools</h4><p>Running admissions, attendance, fees and reports with AI</p><span class="soon">Coming soon</span></article>
+    </div>
+    <p class="form-note" style="margin-top:22px"><a class="more" href="https://vcakota20-web.github.io/ai-mastery-with-vs-sir/books/" target="_blank" rel="noopener">Open the full book store</a> · Study material for your school is part of our <a href="#sip">School Integrated Program</a>.</p>
+  </div>
+</section>
+
+<section class="section on-navy" id="defence">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Defence and government careers</p>
+      <h2>Your path into the uniform or government service.</h2>
+      <p class="lead">Our founder served in the Indian Navy as a Naval Artificer. He now guides students and parents toward defence exams and government service careers, with advice shaped by his own years of service.</p>
+    </div>
+    <div class="def-grid">
+      <div class="def-card"><p class="eyebrow">RIMC</p><h3>Rashtriya Indian Military College</h3><p>Preparation and counselling for entry to Class 8 through the national RIMC entrance exam conducted by NTA.</p></div>
+      <div class="def-card"><p class="eyebrow">NDA</p><h3>National Defence Academy</h3><p>Guidance for the UPSC written exam and the SSB interview, for students after Class 12.</p></div>
+      <div class="def-card"><p class="eyebrow">Government service</p><h3>Other defence and government exams</h3><p>Consultation on choosing the right exam, eligibility, syllabus and a preparation plan for a government service career.</p></div>
+    </div>
+    <ul class="ticks def-cover">
+      <li>Exam strategy and a year-wise preparation plan</li>
+      <li>Subject coaching for the written papers</li>
+      <li>Discipline, fitness and interview readiness</li>
+      <li>Exam selection and eligibility for defence and government roles</li>
+      <li>Parent counselling on timelines and next steps</li>
+    </ul>
+    <p class="def-note">Dates, age limits and eligibility change every year. We check each one against the official notice before we advise you.</p>
+  </div>
+</section>
+
+<section class="section" id="credentials">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">AI training and certifications</p>
+      <h2>A teacher who keeps learning, so your school gets AI that works.</h2>
+      <p class="lead">Our founder trains in AI strategy, prompt engineering and Python, and uses it to build automation for schools, coaching institutes and businesses.</p>
+    </div>
+    <ul class="certs">
+      <li><time>Jul 2026</time><b>Executive Program in Digital Transformation &amp; AI for Leaders</b><span>Electronics &amp; ICT Academy, IIT Guwahati</span></li>
+      <li><time>Sep 2026</time><b>Prompt Engineering for ChatGPT</b><span>Vanderbilt University</span></li>
+      <li><time>Sep 2026</time><b>Programming for Everybody (Getting Started with Python)</b><span>University of Michigan</span></li>
+      <li><time>Sep 2026</time><b>AI for Content Creation</b><span>Google</span></li>
+      <li><time>Sep 2026</time><b>AI for Brainstorming and Planning</b><span>Coursera</span></li>
+      <li><time>Sep 2026</time><b>Google AI Fundamentals</b><span>Coursera</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section alt" id="results">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Top rank milestones</p>
+      <h2>Results from our founder's physics teaching journey.</h2>
+    </div>
+    <ul class="ranks">
+      <li><b>AIR 1</b><span>AIIMS 2017</span><em>Nishita Purohit</em></li>
+      <li><b>AIR 5</b><span>NEET 2018</span><em>Prince Choudhary</em></li>
+      <li><b>AIR 1</b><span>NEET 2020</span><em>Shoaib Aftab, 720/720</em></li>
+      <li><b>AIR 24</b><span>NEET 2023</span><em>Samuel H. Tsapa</em></li>
+      <li><b>AIR 28</b><span>NEET 2024</span><em>Arindam Chowdhury, 715/720</em></li>
+    </ul>
+    <p class="proof-note">Achieved while our founder was Academic Director and Senior Physics Faculty at earlier institutes. These are his career results and are not claims about VCA EduTech and AI Pvt. Ltd. programmes.</p>
+  </div>
+</section>
+
+<section class="section" id="founder">
+  <div class="wrap founder">
+    <figure class="photo"><img src="vs-sir.jpg" width="760" height="950" alt="Vijay K. Sharma, known as VS Sir, with arms crossed" loading="lazy"><figcaption>VS Sir · Founder and Director</figcaption></figure>
+    <div>
+      <p class="eyebrow">Founder and Director</p>
+      <h2>Vijay K. Sharma, known as VS Sir.</h2>
+      <p class="role">Ex-Navy Naval Artificer · AI-enabled educator · Author</p>
+      <p class="lead">Vijay K. Sharma brings more than 20 years of professional experience. He began in the Indian Navy, then spent over a decade teaching NEET Physics at Kota's leading institutes, where he also served as Academic Director. Today he builds AI automation for educators and writes the books his students use.</p>
+      <ul class="timeline" aria-label="Selected experience">
+        <li><time>2002–2008</time><span><b>Naval Artificer</b>, Indian Navy</span></li>
+        <li><time>2012–2015</time><span><b>Physics Faculty (Medical)</b>, Aakash Institute</span></li>
+        <li><time>2015–2021</time><span><b>Senior Physics Faculty (Medical)</b>, Allen Career Institute, Kota</span></li>
+        <li><time>2021–2024</time><span><b>Academic Director and Senior Physics Faculty</b>, Physics Wallah, Kota</span></li>
+        <li><time>Now</time><span><b>Founder and Director</b>, VCA EduTech and AI Pvt. Ltd.</span></li>
+      </ul>
+      <div class="chips">
+        <span class="chip">B.Tech, Electronics &amp; Instrumentation</span>
+        <span class="chip">CSIR-NET JRF, AIR 97</span>
+        <span class="chip">GATE qualified, 2012 and 2013</span>
+        <span class="chip">IIM Kozhikode eMDP</span>
+      </div>
+      <div class="social">
+        <a href="https://youtube.com/@vcakota" target="_blank" rel="noopener">YouTube @vcakota</a>
+        <a href="https://www.instagram.com/vs_sirphysics" target="_blank" rel="noopener">Instagram @vs_sirphysics</a>
+        <a href="https://www.linkedin.com/in/vs-sir-physics-2033321a0" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <p class="founder-note">Institute names appear only as employment history. VCA EduTech and AI Pvt. Ltd. is an independent company.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="eyebrow">Contact</p>
+      <h2>Start with a free school assessment.</h2>
+      <p class="lead" style="margin-top:14px">Tell us about your school, institute or business. We reply on WhatsApp or email, usually within one working day.</p>
+      <ul class="contact-list">
+        <li><b>WhatsApp and phone</b><span>+91 96024 05311</span></li>
+        <li><b>Email</b><span><a href="mailto:vcaedutechai@gmail.com">vcaedutechai@gmail.com</a></span></li>
+        <li><b>Follow VS Sir</b><span><a href="https://youtube.com/@vcakota" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/vs_sirphysics" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.linkedin.com/in/vs-sir-physics-2033321a0" target="_blank" rel="noopener">LinkedIn</a></span></li>
+        <li><b>Based in</b><span>Jaipur, Rajasthan. Serving schools across India.</span></li>
+      </ul>
+    </div>
+    <form id="lead" autocomplete="on">
+      <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name"></div>
+      <div class="field"><label for="f-org">School, institute or business, and city</label><input id="f-org" name="org" type="text" autocomplete="organization"></div>
+      <div class="field"><label for="f-phone">Your mobile number</label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel"></div>
+      <div class="field"><label for="f-need">I am interested in</label>
+        <select id="f-need" name="need">
+          <option>School Integrated Program (NEET, IIT-JEE, Olympiads, Foundation)</option>
+          <option>AI automation for my school, institute, college or business</option>
+          <option>AI learning and mentorship</option>
+          <option>NEET, IIT-JEE or Olympiad coaching</option>
+          <option>Defence exam or government service guidance</option>
+        </select>
+      </div>
+      <div class="field"><label for="f-msg">Anything else we should know (optional)</label><textarea id="f-msg" name="msg"></textarea></div>
+      <a id="wa-send" class="btn btn-gold" href="https://wa.me/919602405311" target="_blank" rel="noopener">Send on WhatsApp</a>
+      <p class="form-note">This opens WhatsApp with your details filled in. Nothing is sent until you press send there.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg viewBox="0 0 200 200" role="img" aria-label="VCA seal"><use href="#mark"/></svg>
+          <span><b>VCA EduTech and AI Private Limited</b>Education · Discipline · AI</span>
+        </div>
+      </div>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="#sip">School Program</a><a href="#automation">Automation</a><a href="#learn">NEET &amp; JEE</a><a href="#books">Books</a><a href="#defence">Defence &amp; Govt</a><a href="#founder">Founder</a><a href="#contact">Contact</a>
+        <a href="https://youtube.com/@vcakota" target="_blank" rel="noopener">YouTube</a><a href="https://www.instagram.com/vs_sirphysics" target="_blank" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/vs-sir-physics-2033321a0" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+    <div class="legal">
+      <span>© 2026 VCA EduTech and AI Private Limited. Jaipur, Rajasthan, India.</span>
+      <span>Results shown are the founder's career results at earlier institutes. Exam dates and eligibility change every year, so please check official notices.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var form=document.getElementById('lead');
+  var link=document.getElementById('wa-send');
+  if(!form||!link)return;
+  var NUM='919602405311';
+  function v(id){var e=document.getElementById(id);return e?e.value.trim():'';}
+  function update(){
+    var lines=['Hello VCA EduTech and AI team,'];
+    if(v('f-name'))lines.push('Name: '+v('f-name'));
+    if(v('f-org'))lines.push('School / institute / business, city: '+v('f-org'));
+    if(v('f-phone'))lines.push('My number: '+v('f-phone'));
+    if(v('f-need'))lines.push('Interested in: '+v('f-need'));
+    if(v('f-msg'))lines.push(v('f-msg'));
+    link.href='https://wa.me/'+NUM+'?text='+encodeURIComponent(lines.join('\n'));
+  }
+  form.addEventListener('input',update);
+  form.addEventListener('change',update);
+  form.addEventListener('submit',function(e){e.preventDefault();});
+  update();
+})();
+</script>
+</body>
+</html>
