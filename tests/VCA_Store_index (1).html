@@ -1,0 +1,104 @@
+<title>VCA Test Series Store</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: sticky exam switch, pass cards first, then subject packs, then chapter grid with per-chapter price tiles. */
+:root{--bg:#f3f5f9;--surface:#fff;--ink:#14213d;--muted:#586277;--line:#d8dee9;--brand:#1d3a6e;--on-brand:#fff;--accent:#e5a00d;--on-accent:#1b1300;--soft:#e6ecf7;--good:#1b7a46;
+--disp:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;--body:'Source Sans 3','Segoe UI',system-ui,sans-serif}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1525;--surface:#172036;--ink:#e8edf7;--muted:#9ba7bf;--line:#2b3857;--brand:#8db0f3;--on-brand:#0e1525;--accent:#f0b429;--soft:#22304f;--good:#5fd18c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1525;--surface:#172036;--ink:#e8edf7;--muted:#9ba7bf;--line:#2b3857;--brand:#8db0f3;--on-brand:#0e1525;--accent:#f0b429;--soft:#22304f;--good:#5fd18c;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:16px/1.5 var(--body)}
+.wrap{max-width:1040px;margin:0 auto;padding-block:20px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--disp);margin:0;text-wrap:balance}
+h1{font-size:clamp(28px,5vw,42px);line-height:1.1}
+h2{font-size:22px;margin-bottom:12px}
+.top{display:flex;gap:12px;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;margin-bottom:18px}
+.top p{margin:6px 0 0;color:var(--muted);max-width:560px}
+.sw{display:flex;gap:6px;background:var(--surface);border:1px solid var(--line);padding:4px;border-radius:12px}
+.sw button{font:700 15px var(--body);border:0;background:none;color:var(--ink);padding:9px 18px;border-radius:9px;cursor:pointer}
+.sw button[aria-pressed=true]{background:var(--brand);color:var(--on-brand)}
+button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+section{margin-top:30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.card.best{border:2px solid var(--accent)}
+.tag{align-self:flex-start;font:700 12px var(--body);letter-spacing:.06em;text-transform:uppercase;background:var(--accent);color:var(--on-accent);padding:2px 9px;border-radius:99px}
+.price{font:800 32px var(--disp)}
+.price s{font:400 16px var(--body);color:var(--muted);margin-left:6px}
+.per{color:var(--muted);font-size:14px}
+ul.f{margin:0;padding-left:18px;font-size:15px;flex:1}
+.btn{font:700 15px var(--body);text-align:center;text-decoration:none;border-radius:9px;padding:10px 14px;border:1px solid var(--brand);background:var(--brand);color:var(--on-brand);cursor:pointer;display:block}
+.btn.alt{background:none;color:var(--brand)}
+.btn.gold{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.sub{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.sub button{font:600 14px var(--body);border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:6px 14px;border-radius:99px;cursor:pointer}
+.sub button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.ch{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.c{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0}
+.c b{flex:1;font-weight:600;font-size:15px;min-width:0}
+.c span{display:block;font-weight:400;color:var(--muted);font-size:13px}
+.c a{font:700 14px var(--body);color:var(--brand);border:1px solid var(--brand);border-radius:8px;padding:6px 10px;text-decoration:none;white-space:nowrap}
+.note{background:var(--soft);border-radius:10px;padding:12px 14px;font-size:14px;color:var(--ink);margin-top:14px}
+.trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;font-size:15px}
+.trust div{border-left:3px solid var(--accent);padding-left:10px}
+footer{margin-top:36px;color:var(--muted);font-size:14px}
+</style>
+<div class="wrap">
+ <div class="top">
+  <div><h1>CBT Test Series for NEET UG and JEE Main</h1>
+  <p>Written in the latest NTA pattern by VS Sir, a physics educator with 20+ years of NEET and JEE teaching. Every student gets a different set of questions.</p></div>
+  <div class="sw" role="group" aria-label="Choose exam"><button id="bN" aria-pressed="true">NEET UG</button><button id="bJ" aria-pressed="false">JEE Main</button></div>
+ </div>
+ <section><h2 id="passH"></h2><div class="grid" id="passes"></div><div class="note" id="patt"></div></section>
+ <section><h2>Subject packs</h2><div class="grid" id="packs"></div></section>
+ <section><h2>Chapter-wise tests</h2>
+  <div class="sub" id="sub" role="group" aria-label="Choose subject"></div>
+  <div class="ch" id="chs"></div></section>
+ <section><h2>How it works</h2>
+  <div class="trust"><div><b>1. Pay securely.</b> Razorpay: UPI, cards, net banking.</div>
+  <div><b>2. Get your access code by email.</b> It arrives within a minute from VCA EduTech.</div>
+  <div><b>3. Open your portal and start.</b> Your tests are listed by subject. Start any time.</div>
+  <div><b>4. See solutions.</b> Marks, +4 / −1 scoring and a solution for every question after you submit.</div></div></section>
+ <section><h2>Why students trust it</h2>
+  <div class="trust"><div><b>Different paper for every student.</b> Questions and option order change per student, so sharing answers does not help.</div>
+  <div><b>Solution for every question.</b> Simple, step-by-step working after each test.</div>
+  <div><b>Real exam screen.</b> Timer, question palette, mark for review and +4 / −1 marking, as in the NTA test.</div>
+  <div><b>NCERT-based, NTA pattern.</b> Chapter tests and full mocks follow the NEET UG and JEE Main paper pattern.</div></div>
+  <div class="note">Launch prices. New and harder questions, including diagram-based ones, are being added regularly, and your access stays valid for all updates. Questions? WhatsApp +91 96024 05311.</div></section>
+ <footer>VCA EduTech and AI Pvt. Ltd., Jaipur · WhatsApp +91 96024 05311 · vcakota.com</footer>
+</div>
+<script>
+var APP="https://script.google.com/macros/s/AKfycbyLH85TTq-YQkUAkONIdr51qez9JMbn4p8Rf3FmJBmWaSr_HexuUJDE_kjdXjfa5rdOJg/exec";
+var CH={"chem": [["chem_alcohol", "Alcohols, Phenols and Ethers", 15], ["chem_carbonyl", "Aldehydes, Ketones and Carboxylic Acids", 15], ["chem_amines", "Amines", 13], ["chem_biomol", "Biomolecules", 14], ["chem_bonding", "Chemical Bonding", 15], ["chem_kinetics", "Chemical Kinetics", 14], ["chem_everyday", "Chemistry in Everyday Life", 12], ["chem_coord", "Coordination Compounds", 15], ["chem_electro", "Electrochemistry", 15], ["chem_equil", "Equilibrium", 15], ["chem_goc", "General Organic Chemistry", 15], ["chem_haloalk", "Haloalkanes and Haloarenes", 15], ["chem_hydro", "Hydrocarbons", 15], ["chem_sblock", "Hydrogen and s-Block Elements", 12], ["chem_metal", "Isolation of Elements (Metallurgy)", 12], ["chem_periodic", "Periodic Properties", 15], ["chem_polymer", "Polymers", 10], ["chem_redox", "Redox Reactions", 15], ["chem_solid", "Solid State", 13], ["chem_solutions", "Solutions", 15], ["chem_mole", "Some Basic Concepts of Chemistry", 15], ["chem_gases", "States of Matter (Gases)", 12], ["chem_atomic", "Structure of Atom", 15], ["chem_surface", "Surface Chemistry", 12], ["chem_thermo", "Thermodynamics", 15], ["chem_dblock", "d- and f-Block Elements", 13], ["chem_pblock13", "p-Block Elements (Groups 13 and 14)", 12], ["chem_pblock", "p-Block Elements (Groups 15 to 18)", 14]], "bot": [["bio_anatomy", "Anatomy of Flowering Plants", 13], ["bio_biodiv", "Biodiversity and Conservation", 12], ["bio_biomol", "Biomolecules", 13], ["bio_biotechapp", "Biotechnology and its Applications", 11], ["bio_biotech", "Biotechnology: Principles and Processes", 13], ["bio_cellcycle", "Cell Cycle and Cell Division", 13], ["bio_cell", "Cell: The Unit of Life", 15], ["bio_ecosystem", "Ecosystem", 14], ["bio_envissues", "Environmental Issues", 12], ["bio_microbes", "Microbes in Human Welfare", 12], ["bio_mineral", "Mineral Nutrition", 12], ["bio_molbio", "Molecular Basis of Inheritance", 15], ["bio_morph", "Morphology of Flowering Plants", 13], ["bio_popul", "Organisms and Populations", 12], ["bio_photosyn", "Photosynthesis in Higher Plants", 15], ["bio_growth", "Plant Growth and Development", 14], ["bio_plantkingdom", "Plant Kingdom", 12], ["bio_genetics", "Principles of Inheritance", 15], ["bio_respiration", "Respiration in Plants", 15], ["bio_sexrepro", "Sexual Reproduction in Flowering Plants", 14], ["bio_transport", "Transport in Plants", 14]], "zoo": [["bio_animal", "Animal Kingdom", 14], ["bio_circulation", "Body Fluids and Circulation", 15], ["bio_breathing", "Breathing and Exchange of Gases", 14], ["bio_endocrine", "Chemical Coordination and Integration", 14], ["bio_digestion", "Digestion and Absorption", 15], ["bio_evolution", "Evolution", 14], ["bio_excretion", "Excretory Products and Their Elimination", 14], ["bio_health", "Human Health and Disease", 14], ["bio_humanrepro", "Human Reproduction", 14], ["bio_locomotion", "Locomotion and Movement", 12], ["bio_neural", "Neural Control and Coordination", 15], ["bio_reprohealth", "Reproductive Health", 12], ["bio_structorg", "Structural Organisation in Animals", 10]], "phy": [["phy_nuclei", "Atoms and Nuclei", 15], ["phy_current", "Current Electricity", 15], ["phy_dual", "Dual Nature of Radiation and Matter", 13], ["phy_emi", "EMI and Alternating Current", 14], ["phy_emwaves", "Electromagnetic Waves", 12], ["phy_electro", "Electrostatics", 15], ["phy_gravitation", "Gravitation", 14], ["phy_kinematics", "Kinematics", 15], ["phy_laws", "Laws of Motion", 15], ["phy_fluids", "Mechanical Properties of Solids and Fluids", 14], ["phy_magnetism", "Moving Charges and Magnetism", 14], ["phy_shm", "Oscillations (SHM)", 15], ["phy_ray", "Ray Optics", 15], ["phy_rotation", "Rotational Motion", 14], ["phy_semicon", "Semiconductor Electronics", 15], ["phy_thermal", "Thermodynamics and Kinetic Theory", 15], ["phy_units", "Units and Measurements", 13], ["phy_waveopt", "Wave Optics", 14], ["phy_waves", "Waves", 14], ["phy_work", "Work, Energy and Power", 15]], "math": [["math_alg2", "Algebra (JEE Main level)", 10], ["math_calc2", "Calculus (JEE Main level)", 12], ["math_coord", "Coordinate Geometry", 10], ["math_diff", "Differentiation", 10], ["math_integ", "Integration", 10], ["math_limits", "Limits and Continuity", 10], ["math_mat", "Matrices and Determinants", 10], ["math_prob", "Probability", 10], ["math_quad", "Quadratic Equations", 10], ["math_ap", "Sequences and Series", 10], ["math_trig", "Trigonometry", 10], ["math_vec", "Vectors", 10]]};
+var SN={phy:"Physics",chem:"Chemistry",bot:"Botany",zoo:"Zoology",math:"Mathematics"};
+var EX={
+ neet:{name:"NEET UG",subs:["phy","chem","bot","zoo"],
+  pass:{id:"neet_pass",price:449,mrp:999,sub:"50 full mocks + every chapter test",feat:["50 full mocks, 180 questions each","All chapter tests of Physics, Chemistry, Botany, Zoology","Solution for every question"]},
+  mock:{id:"neet_mocks",price:299,mrp:699,sub:"50 full mocks",feat:["180 questions, 180 minutes","Physics 45, Chemistry 45, Botany 45, Zoology 45","720 marks, +4 / −1"]},
+  packs:{phy:["pack_phy",149],chem:["pack_chem",149],bot:["pack_bot",149],zoo:["pack_zoo",99]},
+  patt:"NEET UG pattern: 180 compulsory questions, 720 marks, +4 for correct and −1 for wrong. Physics 45, Chemistry 45, Botany 45, Zoology 45."},
+ jee:{name:"JEE Main",subs:["phy","chem","math"],
+  pass:{id:"jee_pass",price:399,mrp:899,sub:"50 full mocks + every chapter test",feat:["50 full mocks, 75 questions each","All chapter tests of Physics, Chemistry, Mathematics","Solution for every question"]},
+  mock:{id:"jee_mocks",price:249,mrp:599,sub:"50 full mocks",feat:["75 questions, 180 minutes","25 per subject","300 marks, +4 / −1"]},
+  packs:{phy:["pack_phy",149],chem:["pack_chem",149],math:["pack_math",99]},
+  patt:"JEE Main pattern: 75 questions, 25 per subject, 300 marks, +4 for correct and −1 for wrong, 3 hours. Multiple-choice format."}};
+var cur="neet",subj="phy";
+function buy(id){return APP+"?buy="+id;}
+function card(p,title,best){return '<div class="card'+(best?' best':'')+'">'+(best?'<span class="tag">Best value</span>':'')+'<h3>'+title+'</h3><div class="price">₹'+p.price+'<s>₹'+p.mrp+'</s></div><div class="per">'+p.sub+' · launch price</div><ul class="f">'+p.feat.map(function(f){return'<li>'+f+'</li>';}).join('')+'</ul><a class="btn '+(best?'gold':'')+'" href="'+buy(p.id)+'" target="_blank" rel="noopener">Buy now</a></div>';}
+function render(){var e=EX[cur];
+ document.getElementById('passH').textContent=e.name+' test series';
+ document.getElementById('passes').innerHTML=card(e.pass,'Complete '+e.name+' Pass',true)+card(e.mock,'Full Mock Series',false);
+ document.getElementById('patt').textContent=e.patt;
+ document.getElementById('packs').innerHTML=e.subs.map(function(s){var pk=e.packs[s];
+  return '<div class="card"><h3>'+SN[s]+' pack</h3><div class="price">₹'+pk[1]+'<s>₹'+(CH[s].length*29)+'</s></div><div class="per">'+CH[s].length+' chapter tests together</div><a class="btn alt" href="'+buy(pk[0])+'" target="_blank" rel="noopener">Buy now</a></div>';}).join('');
+ if(e.subs.indexOf(subj)<0)subj=e.subs[0];
+ var sb=document.getElementById('sub');sb.innerHTML=e.subs.map(function(s){return'<button aria-pressed="'+(s===subj)+'" data-s="'+s+'">'+SN[s]+' ('+CH[s].length+')</button>';}).join('');
+ sb.querySelectorAll('button').forEach(function(b){b.onclick=function(){subj=b.dataset.s;render();};});
+ document.getElementById('chs').innerHTML=CH[subj].map(function(c){
+  return '<div class="c"><b>'+c[1]+'<span>'+c[2]+' questions</span></b><a href="'+buy('ch_'+c[0])+'" target="_blank" rel="noopener">₹29</a></div>';}).join('');
+ document.getElementById('bN').setAttribute('aria-pressed',cur==='neet');document.getElementById('bJ').setAttribute('aria-pressed',cur==='jee');}
+document.getElementById('bN').onclick=function(){cur='neet';render();};
+document.getElementById('bJ').onclick=function(){cur='jee';render();};
+render();
+</script>
