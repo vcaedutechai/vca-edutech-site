@@ -663,7 +663,7 @@ var CAREER_FORM_URL="https://docs.google.com/forms/d/e/1FAIpQLScAnoPgyEOb-rq3oFK
   update();
 })();
 </script>
-<!-- VCA TEST SERIES PROMO v2: paste this whole block just before </body> in index.html (replace the old v1 block if you added it) -->
+<!-- VCA TEST SERIES PROMO v4 (Diwali, auto-expires 10 Nov): paste this whole block just before </body> in index.html (replace the old v1 block if you added it) -->
 <style>
 #vcaTB{position:fixed;top:0;left:0;right:0;z-index:99999;background:linear-gradient(90deg,#14213d,#1d3a6e);color:#fff;font:600 15px/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;display:flex;align-items:center;justify-content:center;gap:12px;padding:10px 44px 10px 12px;flex-wrap:wrap;text-align:center;box-shadow:0 3px 14px rgba(0,0,0,.3)}
 #vcaTB b{color:#ffd166}
@@ -677,30 +677,44 @@ var CAREER_FORM_URL="https://docs.google.com/forms/d/e/1FAIpQLScAnoPgyEOb-rq3oFK
 @keyframes vcaPulse{0%{box-shadow:0 0 0 0 rgba(255,209,102,.7)}70%{box-shadow:0 0 0 12px rgba(255,209,102,0)}100%{box-shadow:0 0 0 0 rgba(255,209,102,0)}}
 @media(max-width:520px){#vcaTB{font-size:13px}#vcaFAB{right:10px;bottom:10px;padding:12px 14px}}
 </style>
-<div id="vcaTB"><span><span class="new">NEW</span> 🎯 <b>NEET UG &amp; JEE Main CBT Test Series</b> · 100 full mocks · 90+ chapter tests from <b>₹29</b></span><a class="go" href="/tests/">View tests →</a><button aria-label="Close" onclick="document.getElementById('vcaTB').style.display='none';document.body.style.paddingTop=''">×</button></div>
+<div id="vcaTB"><span id="vcaTBtxt"><span class="new">NEW</span> 🎯 <b>NEET UG &amp; JEE Main CBT Test Series</b> · 100 full mocks · 90+ chapter tests from <b>₹29</b></span><a class="go" href="/tests/">View tests →</a><button aria-label="Close" onclick="document.getElementById('vcaTB').style.display='none';document.body.style.paddingTop=''">×</button></div>
 <a id="vcaFAB" href="/tests/">NEET &amp; JEE Tests<small>Chapter tests from ₹29</small></a>
 <script>
 (function(){
  try{document.body.style.paddingTop=document.getElementById('vcaTB').offsetHeight+'px';}catch(e){}
  try{
-  var done=0;
-  document.querySelectorAll('a').forEach(function(a){
-   if(a.id==='vcaFAB'||a.closest('#vcaTB')||a.classList.contains('vca-menu-test'))return;
-   var t=a.textContent.replace(/\s+/g,' ').trim();
-   if(!/^NEET\s*(&|and)\s*JEE$/i.test(t))return;
-   if(a.nextElementSibling&&a.nextElementSibling.classList.contains('vca-menu-test'))return;
-   var host=(a.parentElement&&a.parentElement.tagName==='LI')?a.parentElement:a;
-   var c=host.cloneNode(true),link=c.tagName==='A'?c:c.querySelector('a');
-   if(!link)return;
-   link.setAttribute('href','/tests/');link.removeAttribute('target');link.removeAttribute('onclick');
-   link.className=(link.className+' vca-menu-test').trim();
-   link.innerHTML='CBT Tests <i>NEW</i>';
-   host.parentNode.insertBefore(c,host.nextSibling);done++;
-  });
+  if(Date.now()<=new Date('2026-11-10T23:59:00+05:30').getTime()){
+   document.getElementById('vcaTBtxt').innerHTML='<span class="new">DIWALI OFFER</span> \ud83e\ude94 <b>NEET &amp; JEE CBT Test Series</b> \u00b7 Complete Pass from <b>\u20b9399</b> \u00b7 till 10 Nov \u00b7 Chapter tests <b>\u20b929</b>';
+   var f=document.getElementById('vcaFAB');f.innerHTML='\ud83e\ude94 Diwali Offer<small>NEET &amp; JEE tests from \u20b929</small>';
+   document.body.style.paddingTop=document.getElementById('vcaTB').offsetHeight+'px';
+  }
+ }catch(e){}
+ function norm(el){return el.textContent.replace(/\s+/g,' ').trim();}
+ function make(ref,before){
+  var host=(ref.parentElement&&ref.parentElement.tagName==='LI')?ref.parentElement:ref;
+  var c=host.cloneNode(true),link=c.tagName==='A'?c:c.querySelector('a');
+  if(!link){link=document.createElement('a');c=link;}
+  link.setAttribute('href','/tests/');link.removeAttribute('target');link.removeAttribute('onclick');link.removeAttribute('id');
+  link.className=(link.className+' vca-menu-test').trim();
+  link.innerHTML='CBT Tests <i>NEW</i>';
+  host.parentNode.insertBefore(c,before?host:host.nextSibling);return true;
+ }
+ try{
+  var all=[].slice.call(document.querySelectorAll('a')).filter(function(a){return a.id!=='vcaFAB'&&!a.closest('#vcaTB')&&!a.classList.contains('vca-menu-test');});
+  var placed=0;
+  /* 1: after every link that mentions NEET and JEE */
+  all.forEach(function(a){var t=norm(a);if(t.length<40&&/NEET/i.test(t)&&/JEE/i.test(t)){if(make(a,false))placed++;}});
+  /* 2: before the first Free assessment / Contact link in the header or nav */
+  if(!placed){all.some(function(a){var t=norm(a);if(/^(free assessment|book a free assessment|contact)/i.test(t)&&a.closest('header,nav')){return make(a,true)&&(placed++,true);}return false;});}
+  /* 3: after any known menu label */
+  if(!placed){all.some(function(a){var t=norm(a);if(/^(school program|automation|books|founder|careers)/i.test(t)&&a.closest('header,nav')){return make(a,false)&&(placed++,true);}return false;});}
+  /* 4: last resort: put a link inside the first header or nav */
+  if(!placed){var h=document.querySelector('nav')||document.querySelector('header');if(h){var l=document.createElement('a');l.href='/tests/';l.className='vca-menu-test';l.innerHTML='CBT Tests <i>NEW</i>';h.appendChild(l);}}
  }catch(e){}
 })();
 </script>
 <!-- END VCA TEST SERIES PROMO -->
+
 
 </body>
 </html>
