@@ -45,7 +45,7 @@ ul.f{margin:0;padding-left:18px;font-size:15px;flex:1}
 footer{margin-top:36px;color:var(--muted);font-size:14px}
 </style>
 <div class="wrap">
- <div class="top">
+ <div id="dwlHolder"></div><div class="top">
   <div><h1>CBT Test Series for NEET UG and JEE Main</h1>
   <p>Written in the latest NTA pattern by VS Sir, a physics educator with 20+ years of NEET and JEE teaching. Every student gets a different set of questions.</p></div>
   <div class="sw" role="group" aria-label="Choose exam"><button id="bN" aria-pressed="true">NEET UG</button><button id="bJ" aria-pressed="false">JEE Main</button></div>
@@ -74,18 +74,20 @@ var CH={"chem": [["chem_alcohol", "Alcohols, Phenols and Ethers", 15], ["chem_ca
 var SN={phy:"Physics",chem:"Chemistry",bot:"Botany",zoo:"Zoology",math:"Mathematics"};
 var EX={
  neet:{name:"NEET UG",subs:["phy","chem","bot","zoo"],
-  pass:{id:"neet_pass",price:449,mrp:999,sub:"50 full mocks + every chapter test",feat:["50 full mocks, 180 questions each","All chapter tests of Physics, Chemistry, Botany, Zoology","Solution for every question"]},
-  mock:{id:"neet_mocks",price:299,mrp:699,sub:"50 full mocks",feat:["180 questions, 180 minutes","Physics 45, Chemistry 45, Botany 45, Zoology 45","720 marks, +4 / −1"]},
+  pass:{id:"neet_pass",price:449,offer:399,sub:"50 full mocks + every chapter test",feat:["50 full mocks, 180 questions each","All chapter tests of Physics, Chemistry, Botany, Zoology","Solution for every question"]},
+  mock:{id:"neet_mocks",price:299,offer:249,sub:"50 full mocks",feat:["180 questions, 180 minutes","Physics 45, Chemistry 45, Botany 45, Zoology 45","720 marks, +4 / −1"]},
   packs:{phy:["pack_phy",149],chem:["pack_chem",149],bot:["pack_bot",149],zoo:["pack_zoo",99]},
   patt:"NEET UG pattern: 180 compulsory questions, 720 marks, +4 for correct and −1 for wrong. Physics 45, Chemistry 45, Botany 45, Zoology 45."},
  jee:{name:"JEE Main",subs:["phy","chem","math"],
-  pass:{id:"jee_pass",price:399,mrp:899,sub:"50 full mocks + every chapter test",feat:["50 full mocks, 75 questions each","All chapter tests of Physics, Chemistry, Mathematics","Solution for every question"]},
-  mock:{id:"jee_mocks",price:249,mrp:599,sub:"50 full mocks",feat:["75 questions, 180 minutes","25 per subject","300 marks, +4 / −1"]},
+  pass:{id:"jee_pass",price:399,offer:349,sub:"50 full mocks + every chapter test",feat:["50 full mocks, 75 questions each","All chapter tests of Physics, Chemistry, Mathematics","Solution for every question"]},
+  mock:{id:"jee_mocks",price:249,offer:199,sub:"50 full mocks",feat:["75 questions, 180 minutes","25 per subject","300 marks, +4 / −1"]},
   packs:{phy:["pack_phy",149],chem:["pack_chem",149],math:["pack_math",99]},
   patt:"JEE Main pattern: 75 questions, 25 per subject, 300 marks, +4 for correct and −1 for wrong, 3 hours. Multiple-choice format."}};
 var cur="neet",subj="phy";
 function buy(id){return APP+"?buy="+id;}
-function card(p,title,best){return '<div class="card'+(best?' best':'')+'">'+(best?'<span class="tag">Best value</span>':'')+'<h3>'+title+'</h3><div class="price">₹'+p.price+'<s>₹'+p.mrp+'</s></div><div class="per">'+p.sub+' · launch price</div><ul class="f">'+p.feat.map(function(f){return'<li>'+f+'</li>';}).join('')+'</ul><a class="btn '+(best?'gold':'')+'" href="'+buy(p.id)+'" target="_blank" rel="noopener">Buy now</a></div>';}
+var DIWALI=(Date.now()<=new Date('2026-11-10T23:59:00+05:30').getTime());
+function card(p,title,best){var cur=DIWALI?p.offer:p.price;
+ return '<div class="card'+(best?' best':'')+'">'+(best?'<span class="tag">Best value</span>':'')+'<h3>'+title+'</h3><div class="price">\u20b9'+cur+(DIWALI?'<s>\u20b9'+p.price+'</s>':'')+'</div><div class="per">'+p.sub+(DIWALI?' \u00b7 Diwali offer till 10 Nov':'')+'</div><ul class="f">'+p.feat.map(function(f){return'<li>'+f+'</li>';}).join('')+'</ul><a class="btn '+(best?'gold':'')+'" href="'+buy(p.id)+'" target="_blank" rel="noopener">Buy now</a></div>';}
 function render(){var e=EX[cur];
  document.getElementById('passH').textContent=e.name+' test series';
  document.getElementById('passes').innerHTML=card(e.pass,'Complete '+e.name+' Pass',true)+card(e.mock,'Full Mock Series',false);
@@ -101,4 +103,5 @@ function render(){var e=EX[cur];
 document.getElementById('bN').onclick=function(){cur='neet';render();};
 document.getElementById('bJ').onclick=function(){cur='jee';render();};
 render();
+if(DIWALI){document.getElementById("dwlHolder").innerHTML='<div id="dwl" style="display:none;background:linear-gradient(90deg,#7b2d00,#c1440e);color:#fff;border-radius:12px;padding:12px 16px;margin:0 0 14px;font-weight:700;text-align:center">\ud83e\ude94 Diwali Offer till 10 Nov: Complete Pass from \u20b9399, Mock Series from \u20b9249. Chapter tests stay \u20b929.</div>';document.getElementById("dwl").style.display="block";}
 </script>
