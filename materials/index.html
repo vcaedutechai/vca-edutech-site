@@ -84,25 +84,28 @@ footer{margin-top:36px;color:var(--muted);font-size:14px}
 <footer>VCA EduTech and AI Private Limited, Jaipur · vcakota.com · WhatsApp +91 96024 05311 · vcaedutechai@gmail.com</footer></div>
 <script>
 /* PAYMENT: paste one Razorpay payment link per product id. Empty link = button opens a WhatsApp enquiry. */
+var APP="https://script.google.com/macros/s/AKfycbwJgk7qDcOJ-ooSvvUclx733UEwDu5_E2YR9b_l-iHHY_2B8sVlfa1ps9-BczJUiu3Z/exec";
+var LIVE=true; /* set false to send buyers to WhatsApp instead */
 var PAY={};
+["neet-ch01","neet-ch02","neet-ch03","jee-ch01","jee-ch02","jee-ch03","neet-bundle3","jee-bundle3","both-ch01","both-ch02","both-ch03"].forEach(function(k){PAY[k]=APP+"?buy="+k;});
 var WA="919602405311";
 var CHAP=[{id:"ch01",n:"Electric Charges and Fields",pg:{N:31,J:35}},{id:"ch02",n:"Electrostatic Potential and Capacitance",pg:{N:33,J:31}},{id:"ch03",n:"Current Electricity",pg:{N:34,J:31}}];
 var P_ONE=49,P_BOTH=79,P_BUNDLE=99;
 var EX={N:{name:"NEET UG",k:"neet",code:"N"},J:{name:"JEE Main",k:"jee",code:"J"}};
 var cur="N";
 var SOON=["Moving Charges and Magnetism","Magnetism and Matter","Electromagnetic Induction","Alternating Current","Electromagnetic Waves","Ray Optics","Wave Optics","Dual Nature of Radiation and Matter","Atoms and Nuclei","Semiconductor Electronics","Class 11 Physics","Chemistry (Physical, Organic, Inorganic)","Mathematics (JEE)","Botany and Zoology (NEET)"];
-function buy(id,label){var u=PAY[id];if(u)return{href:u,txt:"Buy now"};return{href:"https://wa.me/"+WA+"?text="+encodeURIComponent("Hello, I want to buy: "+label+" from vcakota.com/materials"),txt:"Buy on WhatsApp"};}
+function buy(id,label){var u=LIVE&&PAY[id];if(u)return{href:u,txt:"Buy now"};return{href:"https://wa.me/"+WA+"?text="+encodeURIComponent("Hello, I want to buy: "+label+" from vcakota.com/materials"),txt:"Buy on WhatsApp"};}
 function render(){var e=EX[cur],list=CHAP;
  document.getElementById('bN').setAttribute('aria-pressed',cur==="N");document.getElementById('bJ').setAttribute('aria-pressed',cur==="J");
  document.getElementById('offH').textContent="Offers for "+e.name;
  var bl=buy(e.k+"-bundle3",e.name+" Physics Class 12 Chapters 1 to 3 bundle");
- var bb=buy("both-ch","NEET + JEE editions of one chapter");
+ 
  document.getElementById('bundles').innerHTML=
  '<div class="card best"><span class="tag">Best value</span><h3>Class 12 Physics: Chapters 1 to 3</h3><div class="price">₹'+P_BUNDLE+'<s>₹'+(P_ONE*3)+'</s></div><div class="per">'+e.name+' edition · 3 modules</div><ul class="f"><li>Electric Charges and Fields</li><li>Electrostatic Potential and Capacitance</li><li>Current Electricity</li></ul><a class="btn gold" href="'+bl.href+'" target="_blank" rel="noopener">'+bl.txt+'</a></div>'+
  '<div class="card"><h3>Single chapter</h3><div class="price">₹'+P_ONE+'</div><div class="per">One module, '+e.name+' edition</div><ul class="f"><li>Theory, diagrams, 100+ questions</li><li>Challenge set with solutions</li></ul><a class="btn alt" href="#shelf-anchor" onclick="document.querySelector(\'.shelf\').scrollIntoView({behavior:\'smooth\'});return false">Choose a chapter</a></div>'+
- '<div class="card"><h3>NEET + JEE together</h3><div class="price">₹'+P_BOTH+'<s>₹'+(P_ONE*2)+'</s></div><div class="per">Both editions of one chapter</div><ul class="f"><li>For students who attempt both exams</li><li>Compare Main-level and NEET-level sets</li></ul><a class="btn alt" href="'+bb.href+'" target="_blank" rel="noopener">'+bb.txt+'</a></div>';
- document.getElementById('shelf').innerHTML=list.map(function(c,i){var l=buy(e.k+"-"+c.id,e.name+" Physics 12 "+c.n);var s=(c.id==="ch01")?'<a class="btn alt" href="samples/VCA_Sample_'+(cur==="N"?"NEET":"JEE")+'_Electric_Charges_and_Fields.pdf" target="_blank" rel="noopener">Free sample</a>':'';
-  return '<div class="book"><img src="covers/'+e.k+'-'+c.id+'.png" alt="Cover of '+c.n+', '+e.name+' edition" loading="lazy"><div class="in"><h3>Ch '+(i+1)+': '+c.n+'</h3><div class="meta">Physics · Class 12 · '+e.name+' edition · '+c.pg[cur]+' pages</div><div class="price">₹'+P_ONE+'</div><div class="row"><a class="btn gold" href="'+l.href+'" target="_blank" rel="noopener">'+l.txt+'</a>'+s+'</div></div></div>';}).join('');
+ '<div class="card"><h3>NEET + JEE together</h3><div class="price">₹'+P_BOTH+'<s>₹'+(P_ONE*2)+'</s></div><div class="per">Both editions of one chapter</div><ul class="f"><li>For students who attempt both exams</li><li>Compare Main-level and NEET-level sets</li></ul><a class="btn alt" href="#shelf-anchor" onclick="document.querySelector(\'.shelf\').scrollIntoView({behavior:\'smooth\'});return false">Choose a chapter</a></div>';
+ document.getElementById('shelf').innerHTML=list.map(function(c,i){var l=buy(e.k+"-"+c.id,e.name+" Physics 12 "+c.n);var bt=buy("both-"+c.id,"NEET + JEE Physics 12 "+c.n);var s=(c.id==="ch01")?'<a class="btn alt" href="samples/VCA_Sample_'+(cur==="N"?"NEET":"JEE")+'_Electric_Charges_and_Fields.pdf" target="_blank" rel="noopener">Free sample</a>':'';
+  return '<div class="book"><img src="covers/'+e.k+'-'+c.id+'.png" alt="Cover of '+c.n+', '+e.name+' edition" loading="lazy"><div class="in"><h3>Ch '+(i+1)+': '+c.n+'</h3><div class="meta">Physics · Class 12 · '+e.name+' edition · '+c.pg[cur]+' pages</div><div class="price">₹'+P_ONE+'</div><div class="row"><a class="btn gold" href="'+l.href+'" target="_blank" rel="noopener">'+l.txt+'</a>'+s+'</div><a class="btn alt" href="'+bt.href+'" target="_blank" rel="noopener">NEET + JEE both: ₹'+P_BOTH+'</a></div></div>';}).join('');
 }
 document.getElementById('bN').onclick=function(){cur="N";render()};document.getElementById('bJ').onclick=function(){cur="J";render()};
 document.getElementById('soon').innerHTML=SOON.map(function(x){return '<div class="s">'+x+'<span>coming soon</span></div>'}).join('');
