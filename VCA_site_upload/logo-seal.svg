@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="800" height="800" role="img" aria-label="VCA EduTech and AI Private Limited seal">
+  <defs>
+    <path id="ringTop" d="M27 100 A73 73 0 0 1 173 100"/>
+    <path id="ringBot" d="M19 100 A81 81 0 0 0 181 100"/>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="#0F2350"/>
+  <circle cx="100" cy="100" r="93" fill="none" stroke="#F5A623" stroke-width="1.6"/>
+  <circle cx="100" cy="100" r="86" fill="none" stroke="#F5A623" stroke-width=".8" opacity=".7"/>
+  <circle cx="100" cy="100" r="67" fill="none" stroke="#F5A623" stroke-width=".8" opacity=".7"/>
+  <circle cx="100" cy="100" r="62" fill="#16306A"/>
+  <polygon points="100,57 103.17,65.63 112.36,65.98 105.14,71.67 107.64,80.52 100,75.4 92.36,80.52 94.86,71.67 87.64,65.98 96.83,65.63" fill="#F5A623"/>
+  <g stroke="#F5A623" stroke-width="1.1" fill="none" stroke-linecap="round"><path d="M100 84 L88 98 M100 84 L100 102 M100 84 L112 98"/></g>
+  <g fill="#F5A623"><circle cx="88" cy="98" r="2.2"/><circle cx="100" cy="102" r="2.2"/><circle cx="112" cy="98" r="2.2"/></g>
+  <path d="M97 138 C87 131 72 130 58 134 V104 C72 100 87 101 97 109 Z" fill="#FFFFFF"/>
+  <path d="M103 138 C113 131 128 130 142 134 V104 C128 100 113 101 103 109 Z" fill="#DCE6FF"/>
+  <path d="M100 108 V139" stroke="#F5A623" stroke-width="1.4"/>
+  <text font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="13" letter-spacing="2.2" fill="#FFFFFF" text-anchor="middle"><textPath href="#ringTop" startOffset="50%">VCA EDUTECH &amp; AI</textPath></text>
+  <text font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="10.5" letter-spacing="3.2" fill="#FFFFFF" text-anchor="middle"><textPath href="#ringBot" startOffset="50%">PRIVATE LIMITED</textPath></text>
+  <circle cx="22" cy="100" r="2.6" fill="#F5A623"/><circle cx="178" cy="100" r="2.6" fill="#F5A623"/>
+</svg>
