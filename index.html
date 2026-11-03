@@ -249,6 +249,17 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
 .apply .btns{display:flex;flex-wrap:wrap;gap:10px}
 .subjects{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px}
 @media (max-width:820px){.careers-grid{grid-template-columns:1fr}.apply{grid-template-columns:1fr;justify-items:start}}
+
+/* VS Sir reel section */
+.reel{background:var(--navy);color:var(--hero-ink);padding-block:clamp(40px,6vw,72px)}
+.reel-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(20px,4vw,48px);align-items:center}
+.reel-frame{position:relative;border-radius:16px;overflow:hidden;background:#060f22;box-shadow:0 18px 50px rgba(0,0,0,.45);aspect-ratio:16/9;border:1px solid var(--navy-line)}
+.reel-frame video{width:100%;height:100%;display:block;object-fit:cover}
+.reel-ctl{position:absolute;right:12px;bottom:12px;min-height:44px;min-width:44px;padding:0 14px;border-radius:99px;border:1px solid rgba(255,255,255,.5);background:rgba(11,27,58,.8);color:#fff;font:600 .875rem/1 var(--font-body,inherit);cursor:pointer}
+.reel-ctl:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.reel h2{color:#fff;margin:.4rem 0 .6rem}.reel p{color:var(--hero-ink)}
+.reel-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+@media(max-width:820px){.reel-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -321,6 +332,43 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
     </div>
   </div>
 </section>
+
+<section class="reel" aria-labelledby="reel-h">
+  <div class="wrap reel-grid">
+    <div class="reel-frame">
+      <video id="vsReel" muted loop playsinline preload="metadata" poster="/media/vs-sir-reel-poster.jpg" aria-label="VS Sir introduced, student testimonials, and the VCA EduTech and AI books and programmes">
+        <source src="/media/vs-sir-reel-720.mp4" type="video/mp4">
+      </video>
+      <button class="reel-ctl" id="reelBtn" type="button" aria-pressed="false" style="right:112px">Play</button>
+      <button class="reel-ctl" id="reelSnd" type="button" aria-pressed="false">Sound on</button>
+    </div>
+    <div>
+      <p class="eyebrow">Meet your mentor</p>
+      <h2 id="reel-h">VS Sir: 20+ years of teaching NEET and JEE Physics.</h2>
+      <p>Ex-Indian Navy Artificer, author and academic leader. Now building NEET, JEE and school programmes, books, test series and AI learning at VCA EduTech and AI.</p>
+      <div class="reel-cta">
+        <a class="btn btn-gold" href="/materials/">Study Material, from ₹49</a>
+        <a class="btn btn-line" href="/tests/">CBT Test Series</a>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+ var v=document.getElementById('vsReel'),b=document.getElementById('reelBtn');if(!v||!b)return;
+ var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+ function set(p){b.textContent=p?'Pause':'Play';b.setAttribute('aria-pressed',p);}
+ b.onclick=function(){if(v.paused){v.play().then(function(){set(true)}).catch(function(){});}else{v.pause();set(false);}};
+ if(!reduce&&'IntersectionObserver' in window){
+  new IntersectionObserver(function(es){es.forEach(function(e){
+   if(e.isIntersecting&&v.paused&&!v.dataset.user){v.play().then(function(){set(true)}).catch(function(){});}
+   else if(!e.isIntersecting&&!v.paused){v.pause();set(false);}
+  });},{threshold:.4}).observe(v);
+ }
+ b.addEventListener('click',function(){v.dataset.user='1';});
+ var sn=document.getElementById('reelSnd');sn.onclick=function(){v.muted=!v.muted;sn.textContent=v.muted?'Sound on':'Sound off';sn.setAttribute('aria-pressed',!v.muted);if(!v.muted&&v.paused){v.play().then(function(){set(true)}).catch(function(){});v.dataset.user='1';}};
+})();
+</script>
 
 <section class="proof" aria-label="Founder track record">
   <div class="wrap">
