@@ -333,6 +333,18 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
   </div>
 </section>
 
+<section class="proof" aria-label="Founder track record">
+  <div class="wrap">
+    <div class="proof-grid">
+      <div class="proof-item"><b>200,000+</b><span>students taught together in one live online batch*</span></div>
+      <div class="proof-item"><b>AIR 1</b><span>NEET 2020 and AIIMS 2017, plus AIR 5 in NEET 2018, mentored*</span></div>
+      <div class="proof-item"><b>20+ years</b><span>of professional experience, from the Indian Navy to academic leadership</span></div>
+      <div class="proof-item"><b>8 volumes</b><span>in the Automation Mastery book series</span></div>
+    </div>
+    <p class="proof-note">*Achieved by our founder while teaching at earlier institutes. These are his career results and are not claims about VCA EduTech and AI Pvt. Ltd. programmes.</p>
+  </div>
+</section>
+
 <section class="reel" aria-labelledby="reel-h">
   <div class="wrap reel-grid">
     <div class="reel-frame">
@@ -356,6 +368,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
 <script>
 (function(){
  var v=document.getElementById('vsReel'),b=document.getElementById('reelBtn');if(!v||!b)return;
+ var src=v.querySelector('source');if(src)src.addEventListener('error',function(){var m=document.createElement('p');m.style.cssText='position:absolute;left:12px;top:12px;right:12px;margin:0;padding:10px;background:#7a1020;color:#fff;border-radius:8px;font-size:.875rem';m.textContent='Video file not found at /media/vs-sir-reel-720.mp4';v.parentNode.appendChild(m);});
  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
  function set(p){b.textContent=p?'Pause':'Play';b.setAttribute('aria-pressed',p);}
  b.onclick=function(){if(v.paused){v.play().then(function(){set(true)}).catch(function(){});}else{v.pause();set(false);}};
@@ -369,18 +382,6 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
  var sn=document.getElementById('reelSnd');sn.onclick=function(){v.muted=!v.muted;sn.textContent=v.muted?'Sound on':'Sound off';sn.setAttribute('aria-pressed',!v.muted);if(!v.muted&&v.paused){v.play().then(function(){set(true)}).catch(function(){});v.dataset.user='1';}};
 })();
 </script>
-
-<section class="proof" aria-label="Founder track record">
-  <div class="wrap">
-    <div class="proof-grid">
-      <div class="proof-item"><b>200,000+</b><span>students taught together in one live online batch*</span></div>
-      <div class="proof-item"><b>AIR 1</b><span>NEET 2020 and AIIMS 2017, plus AIR 5 in NEET 2018, mentored*</span></div>
-      <div class="proof-item"><b>20+ years</b><span>of professional experience, from the Indian Navy to academic leadership</span></div>
-      <div class="proof-item"><b>8 volumes</b><span>in the Automation Mastery book series</span></div>
-    </div>
-    <p class="proof-note">*Achieved by our founder while teaching at earlier institutes. These are his career results and are not claims about VCA EduTech and AI Pvt. Ltd. programmes.</p>
-  </div>
-</section>
 
 <section class="section" id="sip">
   <div class="wrap">
