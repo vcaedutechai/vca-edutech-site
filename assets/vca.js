@@ -6,7 +6,7 @@ window.VCA_CONFIG={
   metaPixel:'2173221344074914',   /* same Pixel as the books store */
   offerEnd:'2026-11-10T23:59:00+05:30',   /* Diwali offer end. After this, offer wording and offer prices disappear automatically. */
   offerName:'Diwali offer',
-  leadEndpoint:'',   /* paste the Apps Script web-app URL from VCA_Leads.gs here. Empty = forms fall back to WhatsApp. */
+  leadEndpoint:'https://script.google.com/macros/s/AKfycbywsxwXUMnKgFBXWq5YMO1N63E9ugM2o88CLBecjLr887fWo6R9ruOA3BLlFfkOK1GCeA/exec'
 };
 (function(){
  var C=window.VCA_CONFIG;
