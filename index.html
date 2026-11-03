@@ -260,7 +260,25 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
 @media(max-width:820px){.reel-grid{grid-template-columns:1fr}}
 </style>
 <link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#0B1B3A"><script src="/assets/vca.js"></script>
-<style>.aud{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:30px}.aud a.c{display:flex;flex-direction:column;gap:8px;background:rgba(255,255,255,.07);border:1px solid #2A4070;border-radius:14px;padding:18px;color:#fff;text-decoration:none}.aud b{font:800 1.15rem var(--font-display);color:#fff}.aud span{color:#cdd8f3;font-size:.95rem}.aud em{font-style:normal;font-weight:800;color:#F5A623}.cbt-strip{background:#F5A623;color:#1b1300}.cbt-strip .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;justify-content:space-between;padding-block:12px;font-weight:700}.cbt-strip a{background:#0B1B3A;color:#fff;border-radius:99px;padding:9px 18px;text-decoration:none;font-weight:800}.menu-btn{display:none;min-width:44px;min-height:44px;background:#fff;border:1px solid #9aa8c7;color:#12203F;border-radius:10px;font:700 .9rem var(--font-body,inherit);padding:0 14px;cursor:pointer}.hero.on-navy>.wrap{padding-block:clamp(40px,6vw,72px)}@media(max-width:1180px){.menu-btn{display:block}.head-row{flex-wrap:wrap}.nav#nav{display:none;width:100%;flex-direction:column;align-items:stretch;gap:0;padding:8px 0 14px}.nav#nav.open{display:flex}.nav#nav a{padding:12px 6px}.nav .btn{display:inline-flex!important}}@media(max-width:820px){.aud{grid-template-columns:1fr}}</style></head>
+<style>.aud{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:30px}.aud a.c{display:flex;flex-direction:column;gap:8px;background:rgba(255,255,255,.07);border:1px solid #2A4070;border-radius:14px;padding:18px;color:#fff;text-decoration:none}.aud b{font:800 1.15rem var(--font-display);color:#fff}.aud span{color:#cdd8f3;font-size:.95rem}.aud em{font-style:normal;font-weight:800;color:#F5A623}.cbt-strip{background:#F5A623;color:#1b1300}.cbt-strip .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;justify-content:space-between;padding-block:12px;font-weight:700}.cbt-strip a{background:#0B1B3A;color:#fff;border-radius:99px;padding:9px 18px;text-decoration:none;font-weight:800}.menu-btn{display:none;min-width:44px;min-height:44px;background:#fff;border:1px solid #9aa8c7;color:#12203F;border-radius:10px;font:700 .9rem var(--font-body,inherit);padding:0 14px;cursor:pointer}.hero.on-navy>.wrap{padding-block:clamp(40px,6vw,72px)}@media(max-width:1180px){.menu-btn{display:block}.head-row{flex-wrap:wrap}.nav#nav{display:none;width:100%;flex-direction:column;align-items:stretch;gap:0;padding:8px 0 14px}.nav#nav.open{display:flex}.nav#nav a{padding:12px 6px}.nav .btn{display:inline-flex!important}}@media(max-width:820px){.aud{grid-template-columns:1fr}}</style><style>
+.hero2 .h2grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(24px,5vw,56px);align-items:center}
+.hero2 h1{margin:14px 0 16px}.hero2 .lead{margin-bottom:24px}
+.mentor-chip{display:none;align-items:center;gap:12px;margin:6px 0 4px;color:#fff;text-decoration:none}
+.mentor-chip img{width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:50% 18%;border:2px solid var(--gold)}
+.mentor-chip span{display:flex;flex-direction:column;line-height:1.25}.mentor-chip small{color:#cdd8f3;font-size:.8125rem}
+.h2facts{list-style:none;display:flex;flex-wrap:wrap;gap:8px 18px;margin:22px 0 0;padding:0;color:#cdd8f3;font-size:.9375rem}
+.h2facts li{padding-left:14px;position:relative}.h2facts li:before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.h2facts b{color:#fff}
+.vs-card{position:relative;max-width:380px;margin-inline:auto;border-radius:20px;overflow:hidden;border:2px solid rgba(245,166,35,.85);box-shadow:0 24px 60px rgba(0,0,0,.5);background:#0b1636}
+.vs-card img{display:block;width:100%;height:auto;aspect-ratio:4/4.6;object-fit:cover;object-position:50% 16%}
+.vs-meta{display:flex;flex-direction:column;gap:2px;padding:14px 18px 16px;background:linear-gradient(180deg,rgba(11,22,54,.0),#0b1636 35%);margin-top:-60px;position:relative}
+.vs-meta b{font-size:1.25rem;color:#fff}.vs-meta span{color:#cdd8f3;font-size:.875rem}.vs-meta span:nth-of-type(1){color:var(--gold);font-weight:600}
+.vs-meta a{margin-top:6px;color:#fff;font-weight:600;font-size:.875rem}
+.hero2 .aud{margin-top:36px}
+.cbt-feat{background:var(--surface,#fff);padding-block:clamp(32px,5vw,56px)}
+@media(max-width:820px){.hero2 .h2grid{grid-template-columns:minmax(0,1fr)}.vs-card{display:none}.mentor-chip{display:flex}.hero2 .btn{width:100%}.hero2 .aud{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
 <body>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -295,11 +313,31 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
 </header>
 
 <main id="top">
-<section class="hero on-navy">
+<section class="hero on-navy hero2">
   <div class="wrap">
-    <p class="eyebrow">VCA EduTech &amp; AI Pvt. Ltd. · Education. Discipline. AI.</p>
-    <h1>Coaching-grade learning for schools, students and teachers.</h1>
-    <p class="lead">VCA EduTech &amp; AI sets up NEET, IIT-JEE and foundation programmes inside schools, gives students CBT practice and Physics books by VS Sir, and brings AI automation and training to institutes, businesses and teachers.</p>
+    <div class="h2grid">
+      <div class="h2txt">
+        <p class="eyebrow">VCA EduTech &amp; AI Pvt. Ltd. · Education. Discipline. AI.</p>
+        <a class="mentor-chip" href="/about/"><img src="/vs-sir.jpg" alt="" width="56" height="56"><span><b>VS Sir</b><small>Founder &amp; Academic Mentor</small></span></a>
+        <h1>Practise NEET &amp; JEE Main on the real computer-based test screen.</h1>
+        <p class="lead">The VCA CBT Test Series by VS Sir: full mocks and chapter tests for NEET UG and JEE Main, with a solution for every question. Chapter tests start at ₹29.</p>
+        <div class="hero-cta">
+          <a class="btn btn-gold" href="https://vcakota.com/tests/" data-vca-lead="hero_explore_cbt">Explore CBT Test Series</a>
+          <a class="btn btn-line" href="#sip">School Integrated Program</a>
+        </div>
+        <ul class="h2facts"><li><b>NEET UG</b> &amp; <b>JEE Main</b></li><li><b>100</b> full mocks</li><li><b>90+</b> chapter tests</li></ul>
+      </div>
+      <aside class="vs-card" aria-label="About VS Sir">
+        <img src="/vs-sir.jpg" alt="VS Sir (Vijay K. Sharma), Founder and Academic Mentor of VCA EduTech and AI" width="760" height="950" fetchpriority="high">
+        <div class="vs-meta">
+          <b>VS Sir</b>
+          <span>Founder &amp; Academic Mentor</span>
+          <span>Senior Physics Educator</span>
+          <span>20+ years of professional experience</span>
+          <a href="/about/">Know VS Sir →</a>
+        </div>
+      </aside>
+    </div>
     <div class="aud">
       <a class="c" href="#sip"><em>Schools &amp; institutions</em><b>School Integrated Program</b><span>NEET/JEE coaching, faculty, study material, tests and AI automation inside your school.</span><span><em>Explore School Programs →</em></span></a>
       <a class="c" href="/tests/"><em>Students</em><b>NEET/JEE practice</b><span>CBT test series, chapter tests and Physics books by VS Sir.</span><span><em>Start NEET/JEE Practice →</em></span></a>
