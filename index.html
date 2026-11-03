@@ -348,8 +348,8 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
 <section class="reel" aria-labelledby="reel-h">
   <div class="wrap reel-grid">
     <div class="reel-frame">
-      <video id="vsReel" muted loop playsinline preload="metadata" poster="/media/vs-sir-reel-poster.jpg" aria-label="VS Sir introduced, student testimonials, and the VCA EduTech and AI books and programmes">
-        <source src="/media/vs-sir-reel-720.mp4" type="video/mp4">
+      <video id="vsReel" muted loop playsinline preload="metadata" poster="/VCA_website_media_720/vs-sir-reel-poster.jpg" aria-label="VS Sir introduced, student testimonials, and the VCA EduTech and AI books and programmes">
+        <source src="/VCA_website_media_720/vs-sir-reel-720.mp4" type="video/mp4">
       </video>
       <button class="reel-ctl" id="reelBtn" type="button" aria-pressed="false" style="right:112px">Play</button>
       <button class="reel-ctl" id="reelSnd" type="button" aria-pressed="false">Sound on</button>
@@ -368,7 +368,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
 <script>
 (function(){
  var v=document.getElementById('vsReel'),b=document.getElementById('reelBtn');if(!v||!b)return;
- var src=v.querySelector('source');if(src)src.addEventListener('error',function(){var m=document.createElement('p');m.style.cssText='position:absolute;left:12px;top:12px;right:12px;margin:0;padding:10px;background:#7a1020;color:#fff;border-radius:8px;font-size:.875rem';m.textContent='Video file not found at /media/vs-sir-reel-720.mp4';v.parentNode.appendChild(m);});
+ var src=v.querySelector('source');if(src)src.addEventListener('error',function(){var m=document.createElement('p');m.style.cssText='position:absolute;left:12px;top:12px;right:12px;margin:0;padding:10px;background:#7a1020;color:#fff;border-radius:8px;font-size:.875rem';m.textContent='Video file not found at /VCA_website_media_720/vs-sir-reel-720.mp4';v.parentNode.appendChild(m);});
  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
  function set(p){b.textContent=p?'Pause':'Play';b.setAttribute('aria-pressed',p);}
  b.onclick=function(){if(v.paused){v.play().then(function(){set(true)}).catch(function(){});}else{v.pause();set(false);}};
