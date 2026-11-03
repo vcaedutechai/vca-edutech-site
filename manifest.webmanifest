@@ -1,0 +1,28 @@
+{
+ "name": "VCA EduTech & AI",
+ "short_name": "VCA",
+ "description": "NEET/JEE CBT tests, Physics books and AI learning by VS Sir",
+ "start_url": "/?source=pwa",
+ "scope": "/",
+ "display": "standalone",
+ "background_color": "#0B1B3A",
+ "theme_color": "#0B1B3A",
+ "icons": [
+  {
+   "src": "/assets/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/assets/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "/assets/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://vcakota.com/tests/neet/</loc><priority>0.9</priority></url>
   <url><loc>https://vcakota.com/tests/jee/</loc><priority>0.9</priority></url>
-  <url><loc>https://vcakota.com/tests/</loc><priority>0.9</priority></url>
+  <url><loc>https://vcakota.com/tests/</loc><priority>1.0</priority></url>
   <url><loc>https://vcakota.com/tests/store/</loc><priority>0.7</priority></url>
   <url><loc>https://vcakota.com/books/</loc><priority>0.9</priority></url>
   <url><loc>https://vcakota.com/books/neet-physics-class-12-ch01-electric-charges-and-fields/</loc><priority>0.8</priority></url>
@@ -13,8 +13,7 @@
   <url><loc>https://vcakota.com/books/jee-physics-class-12-ch03-current-electricity/</loc><priority>0.8</priority></url>
   <url><loc>https://vcakota.com/</loc><priority>1.0</priority></url>
   <url><loc>https://vcakota.com/about/</loc><priority>0.6</priority></url>
-  <url><loc>https://vcakota.com/contact/</loc><priority>0.6</priority></url>
-  <url><loc>https://vcakota.com/ai/</loc><priority>0.6</priority></url>
-  <url><loc>https://vcakota.com/schools/</loc><priority>0.7</priority></url>
-  <url><loc>https://vcakota.com/home-tutor/</loc><priority>0.5</priority></url>
+  <url><loc>https://vcakota.com/contact/</loc><priority>0.7</priority></url>
+  <url><loc>https://vcakota.com/ai/</loc><priority>0.7</priority></url>
+  <url><loc>https://vcakota.com/privacy/</loc><priority>0.3</priority></url>
 </urlset>
