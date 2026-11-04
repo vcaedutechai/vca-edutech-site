@@ -44,6 +44,10 @@ ul.f{margin:0;padding-left:18px;font-size:15px;flex:1}
 .trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;font-size:15px}
 .trust div{border-left:3px solid var(--accent);padding-left:10px}
 footer{margin-top:36px;color:var(--muted);font-size:14px}
+.card.hot{background:linear-gradient(160deg,#0b1636,#1c2f6b);border:2px solid var(--accent);color:#fff;box-shadow:0 12px 30px rgba(229,160,13,.35);position:relative}
+.card.hot h3,.card.hot .price{color:#fff}.card.hot .price{color:#ffc857}.card.hot .price small{font:700 15px var(--body);color:#fff;margin-left:6px}.card.hot .per,.card.hot ul.f{color:#e4eaff}
+.card.hot .ribbon{position:absolute;top:-12px;right:14px;background:#e5322d;color:#fff;font:800 12px var(--body);border-radius:99px;padding:4px 11px}
+.pk{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 4px}.pk button{font:700 13px var(--body);border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.1);color:#fff;border-radius:99px;padding:5px 11px;cursor:pointer}.pk button[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:#1b1300}
 </style>
 <div class="wrap">
  <p style="margin:0 0 12px"><a href="/">Home</a> · <a href="/tests/neet/">NEET tests</a> · <a href="/tests/jee/">JEE tests</a> · <a href="/books/">Books</a></p><div id="dwlHolder"></div><div class="top">
@@ -71,12 +75,12 @@ var APP="https://script.google.com/macros/s/AKfycbyLH85TTq-YQkUAkONIdr51qez9JMbn
 var SN={phy:"Physics",chem:"Chemistry",bot:"Botany",zoo:"Zoology",math:"Mathematics"};
 var EX={
  neet:{name:"NEET UG",subs:["phy","chem","bot","zoo"],
-  pass:{id:"neet_pass",price:449,offer:399,sub:"50 full mocks + all subject tests",feat:["50 full mocks, 180 questions each","All 5 subject tests of Physics, Chemistry, Botany, Zoology","Solution for every question"]},
+  pass:{id:"neet_pass",price:449,offer:399,sub:"50 full mocks + all subject tests",feat:["50 full mocks, 180 questions each","FREE bonus: all 4 subject-test packs (20 tests \u00d7 45 questions), worth \u20b9116","Solution for every question"]},
   mock:{id:"neet_mocks",price:299,offer:249,sub:"50 full mocks",feat:["180 questions, 180 minutes","Physics 45, Chemistry 45, Botany 45, Zoology 45","720 marks, +4 / −1"]},
   packs:{phy:["sub_phy",29],chem:["sub_chem",29],bot:["sub_bot",29],zoo:["sub_zoo",29]},
   patt:"NEET UG pattern: 180 compulsory questions, 720 marks, +4 for correct and −1 for wrong. Physics 45, Chemistry 45, Botany 45, Zoology 45."},
  jee:{name:"JEE Main",subs:["phy","chem","math"],
-  pass:{id:"jee_pass",price:399,offer:349,sub:"50 full mocks + all subject tests",feat:["50 full mocks, 75 questions each","All 5 subject tests of Physics, Chemistry, Mathematics","Solution for every question"]},
+  pass:{id:"jee_pass",price:399,offer:349,sub:"50 full mocks + all subject tests",feat:["50 full mocks, 75 questions each","FREE bonus: all 3 subject-test packs (15 tests \u00d7 45 questions), worth \u20b987","Solution for every question"]},
   mock:{id:"jee_mocks",price:249,offer:199,sub:"50 full mocks",feat:["75 questions, 180 minutes","25 per subject","300 marks, +4 / −1"]},
   packs:{phy:["sub_phy",29],chem:["sub_chem",29],math:["sub_math",29]},
   patt:"JEE Main pattern: 75 questions, 25 per subject, 300 marks, +4 for correct and −1 for wrong, 3 hours. Multiple-choice format."}};
@@ -85,9 +89,13 @@ function buy(id){return APP+"?buy="+id;}
 var DIWALI=(Date.now()<=new Date('2026-11-10T23:59:00+05:30').getTime());
 function card(p,title,best){var cur=DIWALI?p.offer:p.price;
  return '<div class="card'+(best?' best':'')+'">'+(best?'<span class="tag">Best value</span>':'')+'<h3>'+title+'</h3><div class="price">\u20b9'+cur+(DIWALI?'<s>\u20b9'+p.price+'</s>':'')+'</div><div class="per">'+p.sub+(DIWALI?' \u00b7 Diwali offer till 10 Nov':'')+'</div><ul class="f">'+p.feat.map(function(f){return'<li>'+f+'</li>';}).join('')+'</ul><a class="btn '+(best?'gold':'')+'" href="'+buy(p.id)+'" target="_blank" rel="noopener">Buy now</a></div>';}
+var hs="phy";
+function hot(e){if(e.subs.indexOf(hs)<0){hs=e.subs[0];}
+ return '<div class="card hot"><span class="ribbon">Start at \u20b929</span><span class="tag">Most affordable</span><h3>'+e.name+' Subject tests</h3><div class="price">\u20b929<small>per subject</small></div><div class="per">5 tests \u00d7 45 questions in each subject</div><div class="pk" id="pk">'+e.subs.map(function(x){return '<button type="button" data-s="'+x+'" aria-pressed="'+(x===hs)+'">'+SN[x]+'</button>';}).join('')+'</div><ul class="f"><li>225 questions per subject</li><li>Diagram-based questions included</li><li>Solution for every question</li></ul><a class="btn gold" id="hotBuy" href="'+buy(e.packs[hs][0])+'" target="_blank" rel="noopener">Buy now \u00b7 \u20b929</a></div>';}
+function bindHot(e){var b=document.getElementById('pk');if(!b)return;b.onclick=function(ev){var t=ev.target.closest('button');if(!t)return;hs=t.dataset.s;[].forEach.call(b.children,function(c){c.setAttribute('aria-pressed',c===t);});document.getElementById('hotBuy').href=buy(e.packs[hs][0]);};}
 function render(){var e=EX[cur];
  document.getElementById('passH').textContent=e.name+' test series';
- document.getElementById('passes').innerHTML=card(e.pass,'Complete '+e.name+' Pass',true)+card(e.mock,'Full Mock Series',false);
+ document.getElementById('passes').innerHTML=hot(e)+card(e.pass,'Complete '+e.name+' Pass',true)+card(e.mock,'Full Mock Series',false);bindHot(e);
  document.getElementById('patt').textContent=e.patt;
  document.getElementById('packs').innerHTML=e.subs.map(function(s){var pk=e.packs[s];
   return '<div class="card"><h3>'+SN[s]+': 5 tests of 45 questions</h3><div class="price">₹'+pk[1]+'</div><div class="per">225 questions · diagram-based questions included</div><a class="btn alt" href="'+buy(pk[0])+'" target="_blank" rel="noopener">Buy now</a></div>';}).join('');
