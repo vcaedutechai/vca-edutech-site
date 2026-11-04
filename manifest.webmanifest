@@ -1,8 +1,8 @@
 {
- "name": "VCA EduTech & AI",
- "short_name": "VCA",
+ "name": "VCA CBT Test Series",
+ "short_name": "VCA CBT",
  "description": "NEET/JEE CBT tests, Physics books and AI learning by VS Sir",
- "start_url": "/?source=pwa",
+ "start_url": "/tests/?source=pwa",
  "scope": "/",
  "display": "standalone",
  "background_color": "#0B1B3A",
