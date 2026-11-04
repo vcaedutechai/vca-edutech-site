@@ -48,6 +48,15 @@ footer{margin-top:36px;color:var(--muted);font-size:14px}
 .card.hot h3,.card.hot .price{color:#fff}.card.hot .price{color:#ffc857}.card.hot .price small{font:700 15px var(--body);color:#fff;margin-left:6px}.card.hot .per,.card.hot ul.f{color:#e4eaff}
 .card.hot .ribbon{position:absolute;top:-12px;right:14px;background:#e5322d;color:#fff;font:800 12px var(--body);border-radius:99px;padding:4px 11px}
 .pk{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 4px}.pk button{font:700 13px var(--body);border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.1);color:#fff;border-radius:99px;padding:5px 11px;cursor:pointer}.pk button[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:#1b1300}
+.c-gold{background:linear-gradient(160deg,#ffd166,#f59e0b)!important;border:2px solid #b45309!important;color:#2a1800!important;box-shadow:0 12px 28px rgba(245,158,11,.35)}
+.c-gold h2,.c-gold h3,.c-gold .price,.c-gold .cbt-price,.c-gold .cbt-price b,.c-gold .per,.c-gold .cbt-note,.c-gold ul,.c-gold li,.c-gold p{color:#2a1800!important}.c-gold .price s{color:#7a4a00!important}
+.c-gold .tag{background:#0b1636!important;color:#fff!important}.c-gold .btn{background:#0b1636!important;border-color:#0b1636!important;color:#fff!important}
+.c-teal{background:linear-gradient(160deg,#0f766e,#14b8a6)!important;border:2px solid #0b4f4a!important;color:#fff!important;box-shadow:0 12px 28px rgba(15,118,110,.35)}
+.c-teal h2,.c-teal h3,.c-teal .price,.c-teal .cbt-price,.c-teal .cbt-price b,.c-teal .per,.c-teal .cbt-note,.c-teal ul,.c-teal li,.c-teal p{color:#fff!important}.c-teal .price s{color:#d7fff9!important}
+.c-teal .tag{background:#fff!important;color:#0b4f4a!important}.c-teal .btn{background:#fff!important;border-color:#fff!important;color:#0b4f4a!important}
+.c-teal .price *,.c-teal small,.c-teal em,.c-teal span:not(.tag){color:#fff!important}.c-gold .price *,.c-gold small,.c-gold em,.c-gold span:not(.tag){color:#2a1800!important}.c-teal li.free span,.c-gold li.free span{color:inherit!important}
+.c-gold li.free,.c-teal li.free{background:#fff!important;color:#5b3a00!important;border:1px dashed #b45309}.c-gold li.free b,.c-teal li.free b{color:#8a4b00!important}.c-teal li.free,.c-teal li.free *{color:#5b3a00!important}
+.card.hot .chl{color:#ffc857;font-weight:700}
 </style>
 <div class="wrap">
  <p style="margin:0 0 12px"><a href="/">Home</a> · <a href="/tests/neet/">NEET tests</a> · <a href="/tests/jee/">JEE tests</a> · <a href="/books/">Books</a></p><div id="dwlHolder"></div><div class="top">
@@ -56,7 +65,7 @@ footer{margin-top:36px;color:var(--muted);font-size:14px}
   <div class="sw" role="group" aria-label="Choose exam"><button id="bN" aria-pressed="true">NEET UG</button><button id="bJ" aria-pressed="false">JEE Main</button></div>
  </div>
  <section><h2 id="passH"></h2><div class="grid" id="passes"></div><div class="note" id="patt"></div><div class="note" style="margin-top:10px">🎁 <b>Buying a Complete Pass?</b> Every subject test here is already included FREE in the NEET UG and JEE Main Complete Pass. No need to buy them separately. <a href="/tests/">See the passes</a>.</div></section>
- <section><h2>Subject tests: ₹29 per subject</h2><p style="margin:0 0 10px;color:var(--muted)">Each subject has 5 tests of 45 questions (225 questions), with diagram-based questions and a solution for every question.</p><div class="grid" id="packs"></div></section>
+ <section><h2>Subject tests: ₹29 per subject</h2><p style="margin:0 0 10px;color:var(--muted)">Each subject has 5 tests of 45 questions (225 questions), with diagram-based questions and a solution for every question. All chapter tests of that subject are included FREE.</p><div class="grid" id="packs"></div></section>
  <section><h2>How it works</h2>
   <div class="trust"><div><b>1. Pay securely.</b> Razorpay: UPI, cards, net banking.</div>
   <div><b>2. Get your access code by email.</b> It arrives within a minute from VCA EduTech.</div>
@@ -75,30 +84,30 @@ var APP="https://script.google.com/macros/s/AKfycbyLH85TTq-YQkUAkONIdr51qez9JMbn
 var SN={phy:"Physics",chem:"Chemistry",bot:"Botany",zoo:"Zoology",math:"Mathematics"};
 var EX={
  neet:{name:"NEET UG",subs:["phy","chem","bot","zoo"],
-  pass:{id:"neet_pass",price:449,offer:399,sub:"50 full mocks + all subject tests",feat:["50 full mocks, 180 questions each","FREE bonus: all 4 subject-test packs (20 tests \u00d7 45 questions), worth \u20b9116","Solution for every question"]},
-  mock:{id:"neet_mocks",price:299,offer:249,sub:"50 full mocks",feat:["180 questions, 180 minutes","Physics 45, Chemistry 45, Botany 45, Zoology 45","720 marks, +4 / −1"]},
+  pass:{id:"neet_pass",price:449,offer:399,sub:"50 full mocks + all subject and chapter tests",feat:["50 full mocks, 180 questions each","FREE bonus: all 4 subject-test packs (20 tests \u00d7 45 questions, worth \u20b9116) + all 82 chapter tests","Solution for every question"]},
+  mock:{id:"neet_mocks",price:299,offer:249,sub:"50 full mocks + 82 chapter tests",feat:["180 questions, 180 minutes","Physics 45, Chemistry 45, Botany 45, Zoology 45","720 marks, +4 / −1","FREE bonus: all 82 chapter tests"]},
   packs:{phy:["sub_phy",29],chem:["sub_chem",29],bot:["sub_bot",29],zoo:["sub_zoo",29]},
   patt:"NEET UG pattern: 180 compulsory questions, 720 marks, +4 for correct and −1 for wrong. Physics 45, Chemistry 45, Botany 45, Zoology 45."},
  jee:{name:"JEE Main",subs:["phy","chem","math"],
-  pass:{id:"jee_pass",price:399,offer:349,sub:"50 full mocks + all subject tests",feat:["50 full mocks, 75 questions each","FREE bonus: all 3 subject-test packs (15 tests \u00d7 45 questions), worth \u20b987","Solution for every question"]},
-  mock:{id:"jee_mocks",price:249,offer:199,sub:"50 full mocks",feat:["75 questions, 180 minutes","25 per subject","300 marks, +4 / −1"]},
+  pass:{id:"jee_pass",price:399,offer:349,sub:"50 full mocks + all subject and chapter tests",feat:["50 full mocks, 75 questions each","FREE bonus: all 3 subject-test packs (15 tests \u00d7 45 questions, worth \u20b987) + all 60 chapter tests","Solution for every question"]},
+  mock:{id:"jee_mocks",price:249,offer:199,sub:"50 full mocks + 60 chapter tests",feat:["75 questions, 180 minutes","25 per subject","300 marks, +4 / −1","FREE bonus: all 60 chapter tests"]},
   packs:{phy:["sub_phy",29],chem:["sub_chem",29],math:["sub_math",29]},
   patt:"JEE Main pattern: 75 questions, 25 per subject, 300 marks, +4 for correct and −1 for wrong, 3 hours. Multiple-choice format."}};
 var cur=(new URLSearchParams(location.search).get("exam")==="jee")?"jee":"neet",subj="phy";
 function buy(id){return APP+"?buy="+id;}
 var DIWALI=(Date.now()<=new Date('2026-11-10T23:59:00+05:30').getTime());
 function card(p,title,best){var cur=DIWALI?p.offer:p.price;
- return '<div class="card'+(best?' best':'')+'">'+(best?'<span class="tag">Best value</span>':'')+'<h3>'+title+'</h3><div class="price">\u20b9'+cur+(DIWALI?'<s>\u20b9'+p.price+'</s>':'')+'</div><div class="per">'+p.sub+(DIWALI?' \u00b7 Diwali offer till 10 Nov':'')+'</div><ul class="f">'+p.feat.map(function(f){return'<li>'+f+'</li>';}).join('')+'</ul><a class="btn '+(best?'gold':'')+'" href="'+buy(p.id)+'" target="_blank" rel="noopener">Buy now</a></div>';}
-var hs="phy";
+ return '<div class="card'+(best?' best c-gold':' c-teal')+'">'+(best?'<span class="tag">Best value</span>':'')+'<h3>'+title+'</h3><div class="price">\u20b9'+cur+(DIWALI?'<s>\u20b9'+p.price+'</s>':'')+'</div><div class="per">'+p.sub+(DIWALI?' \u00b7 Diwali offer till 10 Nov':'')+'</div><ul class="f">'+p.feat.map(function(f){return'<li>'+f+'</li>';}).join('')+'</ul><a class="btn" href="'+buy(p.id)+'" target="_blank" rel="noopener">Buy now</a></div>';}
+var hs="phy",CHN={phy:20,chem:28,bot:21,zoo:13,math:12};
 function hot(e){if(e.subs.indexOf(hs)<0){hs=e.subs[0];}
- return '<div class="card hot"><span class="ribbon">Start at \u20b929</span><span class="tag">Most affordable</span><h3>'+e.name+' Subject tests</h3><div class="price">\u20b929<small>per subject</small></div><div class="per">5 tests \u00d7 45 questions in each subject</div><div class="pk" id="pk">'+e.subs.map(function(x){return '<button type="button" data-s="'+x+'" aria-pressed="'+(x===hs)+'">'+SN[x]+'</button>';}).join('')+'</div><ul class="f"><li>225 questions per subject</li><li>Diagram-based questions included</li><li>Solution for every question</li></ul><a class="btn gold" id="hotBuy" href="'+buy(e.packs[hs][0])+'" target="_blank" rel="noopener">Buy now \u00b7 \u20b929</a></div>';}
-function bindHot(e){var b=document.getElementById('pk');if(!b)return;b.onclick=function(ev){var t=ev.target.closest('button');if(!t)return;hs=t.dataset.s;[].forEach.call(b.children,function(c){c.setAttribute('aria-pressed',c===t);});document.getElementById('hotBuy').href=buy(e.packs[hs][0]);};}
+ return '<div class="card hot"><span class="ribbon">Start at \u20b929</span><span class="tag">Most affordable</span><h3>'+e.name+' Subject tests</h3><div class="price">\u20b929<small>per subject</small></div><div class="per">5 tests \u00d7 45 questions in each subject</div><div class="pk" id="pk">'+e.subs.map(function(x){return '<button type="button" data-s="'+x+'" aria-pressed="'+(x===hs)+'">'+SN[x]+'</button>';}).join('')+'</div><ul class="f"><li>225 questions per subject</li><li>Diagram-based questions included</li><li>Solution for every question</li><li class="chl" id="hotCh">FREE bonus: all '+CHN[hs]+' '+SN[hs]+' chapter tests</li></ul><a class="btn gold" id="hotBuy" href="'+buy(e.packs[hs][0])+'" target="_blank" rel="noopener">Buy now \u00b7 \u20b929</a></div>';}
+function bindHot(e){var b=document.getElementById('pk');if(!b)return;b.onclick=function(ev){var t=ev.target.closest('button');if(!t)return;hs=t.dataset.s;[].forEach.call(b.children,function(c){c.setAttribute('aria-pressed',c===t);});document.getElementById('hotBuy').href=buy(e.packs[hs][0]);document.getElementById('hotCh').textContent='FREE bonus: all '+CHN[hs]+' '+SN[hs]+' chapter tests';};}
 function render(){var e=EX[cur];
  document.getElementById('passH').textContent=e.name+' test series';
  document.getElementById('passes').innerHTML=hot(e)+card(e.pass,'Complete '+e.name+' Pass',true)+card(e.mock,'Full Mock Series',false);bindHot(e);
  document.getElementById('patt').textContent=e.patt;
  document.getElementById('packs').innerHTML=e.subs.map(function(s){var pk=e.packs[s];
-  return '<div class="card"><h3>'+SN[s]+': 5 tests of 45 questions</h3><div class="price">₹'+pk[1]+'</div><div class="per">225 questions · diagram-based questions included</div><a class="btn alt" href="'+buy(pk[0])+'" target="_blank" rel="noopener">Buy now</a></div>';}).join('');
+  return '<div class="card"><h3>'+SN[s]+': 5 tests of 45 questions</h3><div class="price">₹'+pk[1]+'</div><div class="per">225 questions · diagram-based · plus all '+CHN[s]+' chapter tests FREE</div><a class="btn alt" href="'+buy(pk[0])+'" target="_blank" rel="noopener">Buy now</a></div>';}).join('');
  document.getElementById('bN').setAttribute('aria-pressed',cur==='neet');document.getElementById('bJ').setAttribute('aria-pressed',cur==='jee');}
 document.getElementById('bN').onclick=function(){cur='neet';render();};
 document.getElementById('bJ').onclick=function(){cur='jee';render();};
