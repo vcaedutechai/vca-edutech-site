@@ -113,8 +113,20 @@ button{font:inherit;cursor:pointer}
   <div class="card" style="margin-top:14px">
    <b>Before you begin</b>
    <ul class="rules" id="rules"></ul>
-   <label for="nm" style="font-weight:700;display:block;margin-top:14px">Your name</label>
-   <input class="inp" id="nm" maxlength="40" placeholder="Enter your name to start" autocomplete="name">
+   <div style="font-weight:800;margin-top:14px">Free test: enter your details to start</div>
+   <div style="font-size:13px;color:#64748b;margin-top:2px">We send your result and study tips on WhatsApp. No spam, no payment.</div>
+   <label for="nm" style="font-weight:700;display:block;margin-top:10px">Your name</label>
+   <input class="inp" id="nm" maxlength="40" placeholder="Your name" autocomplete="name">
+   <label for="ph" style="font-weight:700;display:block">WhatsApp number</label>
+   <input class="inp" id="ph" type="tel" inputmode="tel" maxlength="16" placeholder="10-digit mobile number" autocomplete="tel-national">
+   <label for="em" style="font-weight:700;display:block">Email <span style="font-weight:400;color:#64748b">(optional, for your result copy)</span></label>
+   <input class="inp" id="em" type="email" maxlength="80" placeholder="you@example.com" autocomplete="email">
+   <label for="tg" style="font-weight:700;display:block">I am preparing for</label>
+   <select class="inp" id="tg"><option>NEET</option><option>JEE Main / Advanced</option><option>Both / Not sure</option></select>
+   <label for="cl" style="font-weight:700;display:block">Class</label>
+   <select class="inp" id="cl"><option>Class 11</option><option>Class 12</option><option>Dropper / Repeater</option><option>Other</option></select>
+   <label style="display:flex;gap:8px;align-items:flex-start;font-size:13px;color:#475569;margin:2px 0 12px"><input type="checkbox" id="ok" checked style="margin-top:3px;width:18px;height:18px"><span>I agree to receive my result and study updates from VCA EduTech and AI on WhatsApp and email. I can stop any time.</span></label>
+   <div id="lerr" style="color:#dc2626;font-size:14px;font-weight:600;margin-bottom:8px"></div>
    <button class="btn" id="go">Start the test →</button>
    <button class="btn ghost hide" id="resume" style="margin-left:6px">Resume my attempt</button>
   </div>
@@ -180,12 +192,21 @@ $('stats').innerHTML=T.stats.map(function(s){return'<div class="stat"><b>'+s[0]+
 $('rules').innerHTML=T.rules.map(function(r){return'<li>'+r+'</li>'}).join('');
 var old=load();if(old&&!old.done){$('resume').classList.remove('hide');$('nm').value=old.name||''}
 if(old&&old.done){$('resume').classList.remove('hide');$('resume').textContent='See my last result'}
-$('go').onclick=function(){var n=$('nm').value.trim();if(!n){$('nm').focus();$('nm').style.borderColor='#dc2626';return}
+var LEAD_URL="https://script.google.com/macros/s/AKfycbxL5r7Ow9tKGSsXmPHHoLMDaz4kWuSVf80lFi2Xp8V0hjxGg3BrVA9qgiBOeYUDXOoc/exec",WA="918290680411";
+function lead(ev,extra){try{var L=JSON.parse(localStorage.getItem('vca_lead')||'null');if(!L||!LEAD_URL)return;var d={event:ev,test:T.id,name:L.name,phone:L.phone,email:L.email,target:L.target,cls:L.cls,src:location.search.slice(1),t:new Date().toISOString()};for(var k in(extra||{}))d[k]=extra[k];fetch(LEAD_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(d),keepalive:true}).catch(function(){})}catch(e){}}
+(function(){try{var L=JSON.parse(localStorage.getItem('vca_lead')||'null');if(L){$('nm').value=L.name||'';$('ph').value=L.phone||'';$('em').value=L.email||'';if(L.target)$('tg').value=L.target;if(L.cls)$('cl').value=L.cls}}catch(e){}})();
+$('go').onclick=function(){var n=$('nm').value.trim(),p=$('ph').value.replace(/\D/g,'').replace(/^(91|0)(?=\d{10}$)/,''),e=$('em').value.trim(),er=$('lerr');er.textContent='';
+ if(!n){$('nm').focus();$('nm').style.borderColor='#dc2626';er.textContent='Please enter your name.';return}
+ if(!/^[6-9]\d{9}$/.test(p)){$('ph').focus();$('ph').style.borderColor='#dc2626';er.textContent='Please enter a valid 10-digit WhatsApp number.';return}
+ if(e&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e)){$('em').focus();$('em').style.borderColor='#dc2626';er.textContent='That email looks wrong. Fix it or leave it empty.';return}
+ if(!$('ok').checked){er.textContent='Please tick the box to continue.';return}
+ try{localStorage.setItem('vca_lead',JSON.stringify({name:n,phone:p,email:e,target:$('tg').value,cls:$('cl').value}))}catch(x){}
+ lead('start');
  var seed=Math.floor(Math.random()*1e9),r=rng(seed),perm=Q.map(function(){var p=[0,1,2,3];for(var i=3;i>0;i--){var j=Math.floor(r()*(i+1)),t=p[i];p[i]=p[j];p[j]=t}return p});
  st={name:n,seed:seed,perm:perm,start:Date.now(),end:Date.now()+T.minutes*60000,cur:0,ans:Q.map(function(){return-1}),stat:Q.map(function(){return 0}),spent:Q.map(function(){return 0}),done:false};
  st.stat[0]=1;save();begin()};
 $('resume').onclick=function(){st=old;if(st.done){result()}else{begin()}};
-$('nm').oninput=function(){this.style.borderColor=''};
+$('nm').oninput=$('ph').oninput=$('em').oninput=function(){this.style.borderColor=''};
 
 /* ---------- exam ---------- */
 var lastT=0;
@@ -221,7 +242,7 @@ $('sub1').onclick=function(){var a=Q.filter(function(q,i){return has(i)}).length
 document.addEventListener('keydown',function(e){if(e.target&&e.target.tagName==='INPUT')return;if($('exam').classList.contains('hide')||$('modal').classList.contains('on'))return;if(e.key==='ArrowRight')$('next').click();if(e.key==='ArrowLeft')$('prev').click();if(Q[st.cur].t==='n')return;var k='1234'.indexOf(e.key);if(k<0)k='abcd'.indexOf(e.key.toLowerCase());if(k>=0){var o=st.perm[st.cur][k];st.ans[st.cur]=(st.ans[st.cur]===o?-1:o);save();draw()}});
 
 /* ---------- result ---------- */
-function finish(auto){spend();clearInterval(tick);st.done=true;st.endedAt=Date.now();save();$('timer').classList.add('hide');result(auto)}
+function finish(auto){spend();clearInterval(tick);st.done=true;st.endedAt=Date.now();save();try{var _r=calc(),_m=N*T.pos,_w={};Q.forEach(function(q,i){if(!isOk(i))_w[q.ch]=(_w[q.ch]||0)+1});lead('finish',{score:_r.sc,max:_m,correct:_r.c,wrong:_r.w,weak:Object.keys(_w).sort(function(a,b){return _w[b]-_w[a]}).slice(0,4).join(', ')})}catch(e){}$('timer').classList.add('hide');result(auto)}
 function calc(){var r={c:0,w:0,u:0,sc:0,by:{}};Q.forEach(function(q,i){var k=q.sub||T.subject;r.by[k]=r.by[k]||{c:0,w:0,u:0,sc:0,n:0};var b=r.by[k];b.n++;var ng=q.t==='n'?(T.negN===undefined?T.neg:T.negN):T.neg;if(!has(i)){r.u++;b.u++}else if(isOk(i)){r.c++;b.c++;r.sc+=T.pos;b.sc+=T.pos}else{r.w++;b.w++;r.sc+=ng;b.sc+=ng}});return r}
 function result(auto){
  show('res');var r=calc(),max=N*T.pos,pct=Math.max(0,Math.round(r.sc/max*100)),att=r.c+r.w,acc=att?Math.round(r.c/att*100):0,tm=Math.round(((st.endedAt||Date.now())-st.start)/1000);
@@ -235,6 +256,8 @@ function result(auto){
  if(wk.length)h+='<div style="margin-top:12px;background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:10px 12px;font-size:14px"><b>Revise first:</b> '+wk.map(esc).join(' · ')+'</div>';
  var share='I scored '+r.sc+'/'+max+' in the VCA CBT test by VS Sir. Can you beat my score? Try it free: '+T.shareUrl;
  h+='<div class="row"><a class="btn sm" style="text-decoration:none;background:#16a34a;box-shadow:none" target="_blank" rel="noopener" href="https://wa.me/?text='+encodeURIComponent(share)+'">Challenge a friend on WhatsApp</a><button class="btn sm ghost" id="again">Retake this test</button></div></div>';
+ var wam='Namaste VS Sir, I scored '+r.sc+'/'+max+' in '+T.title+'. Please guide me on my weak chapters.';
+ h+='<div class="card" style="margin-top:14px;border:2px solid #16a34a"><b style="font-size:18px">Get a free review of your score from VS Sir</b><div style="color:#475569;margin:4px 0 10px">Send your score on WhatsApp and we will tell you which chapters to fix first.</div><a class="btn" style="text-decoration:none;display:inline-block;background:#16a34a" target="_blank" rel="noopener" href="https://wa.me/'+WA+'?text='+encodeURIComponent(wam)+'">Chat with VS Sir on WhatsApp →</a></div>';
  h+=T.cta;
  h+='<div class="card" style="margin-top:14px"><div class="row" style="margin:0 0 6px"><h3 style="margin:0;flex:1">Review answers &amp; solutions</h3><button class="btn sm ghost f on" data-f="all">All</button><button class="btn sm ghost f" data-f="no">Wrong</button><button class="btn sm ghost f" data-f="sk">Skipped</button><button class="btn sm ghost f" data-f="ok">Correct</button></div><div id="rv"></div></div>';
  $('res').innerHTML=h;
